@@ -55,8 +55,15 @@
   .grp li{font-size:0.9rem;padding:0.3rem 0;line-height:1.55;}
   .grp li::before{content:"–";color:var(--muted);margin-right:0.5rem;}
   .note{font-size:0.88rem;color:var(--ink-dim);}
-  .timetable-ref{margin-top:1rem;padding-top:0.7rem;border-top:1px solid var(--border);font-size:0.72rem;color:var(--muted);}
-  .timetable-ref .ttl{font-family:'DM Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.3rem;}
+  .timetable-full{margin-top:1rem;padding-top:0.7rem;border-top:1px solid var(--border);}
+  .timetable-full .ttl{font-family:'DM Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
+  .timetable-full .tt-scroll{overflow-x:auto;}
+  .timetable-full table{border-collapse:collapse;width:100%;font-size:0.64rem;color:var(--ink-dim);}
+  .timetable-full th,.timetable-full td{padding:0.25rem 0.4rem;text-align:center;border-bottom:1px solid var(--border);white-space:nowrap;}
+  .timetable-full th{font-family:'DM Mono',monospace;font-weight:500;color:var(--muted);text-transform:uppercase;font-size:0.58rem;}
+  .timetable-full td:first-child,.timetable-full th:first-child{text-align:left;color:var(--muted);font-family:'DM Mono',monospace;}
+  .timetable-full tr.tt-break td{color:var(--muted);opacity:0.6;font-style:italic;}
+  .timetable-full tr:last-child td{border-bottom:none;}
 
   .badge-new{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;background:var(--accent-tint);color:var(--accent);padding:0.15rem 0.45rem;border-radius:4px;margin-left:0.4rem;text-transform:uppercase;}
 
@@ -113,9 +120,25 @@
       <div class="card">
         <div class="card-title">🎒 Koulu</div>
         <div class="note">Ei viikkotiedotetta saatavilla tällä viikolla — läksyt ja muut koulun huomiot puuttuvat siksi dashboardilta.</div>
-        <div class="timetable-ref">
+        <div class="timetable-full">
           <div class="ttl">🕐 Lukujärjestys (kiinteä)</div>
-          Ma 8.15–13.00 · Ti 9.00–14.52 · Ke 8.15–14.00 · To 8.15–14.45 · Pe 8.15–13.00
+          <div class="tt-scroll">
+            <table>
+              <tr><th>Aika</th><th>Ma</th><th>Ti</th><th>Ke</th><th>To</th><th>Pe</th></tr>
+              <tr><td>8.15–9.00</td><td>Engelska</td><td>–</td><td>Religion/Livs</td><td>Religion/Livs</td><td>Engelska</td></tr>
+              <tr><td>9.00–9.45</td><td>Musik</td><td>Mo</td><td>Finska</td><td>Finska</td><td>Mo</td></tr>
+              <tr class="tt-break"><td>9.45–10.00</td><td colspan="5">rast</td></tr>
+              <tr><td>10.00–10.45</td><td>Mo</td><td>Hi</td><td>Mo</td><td>Ma</td><td>BK</td></tr>
+              <tr class="tt-break"><td>10.45–11.00</td><td colspan="5">rast</td></tr>
+              <tr><td>11.00–11.45</td><td>Ma</td><td>Ma*</td><td>X</td><td>X*</td><td>X</td></tr>
+              <tr class="tt-break"><td>11.45–12.00</td><td colspan="5">lunch</td></tr>
+              <tr class="tt-break"><td>12.00–12.15</td><td colspan="5">rast</td></tr>
+              <tr><td>12.15–13.00</td><td>X</td><td>Finska</td><td>Ma*</td><td>Mo</td><td>Mo/Ma*</td></tr>
+              <tr><td>13.00–13.15</td><td>–</td><td>GY</td><td>rast</td><td>rast</td><td>–</td></tr>
+              <tr><td>13.15–14.00</td><td><s>Slöjd</s> (peruttu)</td><td>GY</td><td>BK</td><td>Slöjd</td><td>–</td></tr>
+              <tr><td>14.00–14.45</td><td><s>Slöjd</s> (peruttu)</td><td>GY (päättyy 14.52)</td><td>–</td><td>Slöjd</td><td>–</td></tr>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -136,9 +159,23 @@
       <div class="card">
         <div class="card-title">🎒 Koulu</div>
         <div class="note">Ei viikkotiedotetta saatavilla tällä viikolla — läksyt ja muut koulun huomiot puuttuvat siksi dashboardilta.</div>
-        <div class="timetable-ref">
+        <div class="timetable-full">
           <div class="ttl">🕐 Lukujärjestys (kiinteä)</div>
-          Ma 8.15–14.00 · Ti 8.15–13.00 · Ke 9.00–14.00 · To 8.15–13.00 · Pe 9.00–13.00
+          <div class="tt-scroll">
+            <table>
+              <tr><th>Aika</th><th>Ma</th><th>Ti</th><th>Ke</th><th>To</th><th>Pe</th></tr>
+              <tr><td>8.15–9.00</td><td>FI (Johanna/Anna/Julia)</td><td>X</td><td>–</td><td>EN (Emma)</td><td>–</td></tr>
+              <tr><td>9.00–9.45</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
+              <tr class="tt-break"><td>9.45–10.00</td><td colspan="5">rast</td></tr>
+              <tr><td>10.00–10.45</td><td>RE/LIVS</td><td>MU (Petra)</td><td>X</td><td>X</td><td>X</td></tr>
+              <tr class="tt-break"><td>10.45–11.10</td><td colspan="5">rast</td></tr>
+              <tr class="tt-break"><td>11.10–11.30</td><td colspan="5">lunch</td></tr>
+              <tr><td>11.30–12.15</td><td>X</td><td>GY</td><td>SLÖJD</td><td>X</td><td>X</td></tr>
+              <tr><td>12.15–13.00</td><td>X</td><td>GY</td><td>SLÖJD</td><td>X</td><td>FI (Johanna/Anna/Julia)</td></tr>
+              <tr><td>13.00–13.15</td><td>rast</td><td>–</td><td>rast</td><td>–</td><td>–</td></tr>
+              <tr><td>13.15–14.00</td><td>EN (Emma)</td><td>–</td><td>X</td><td>–</td><td>–</td></tr>
+            </table>
+          </div>
         </div>
       </div>
     </div>
