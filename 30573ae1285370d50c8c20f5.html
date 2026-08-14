@@ -13,13 +13,14 @@
     --accent:#3f6b35; --accent-tint:#e4ecdf;
   }
   *{box-sizing:border-box;}
-  body{background:var(--bg);color:var(--ink);font-family:'Fraunces',serif;font-size:16px;line-height:1.65;padding:2rem 1.5rem;max-width:920px;margin:0 auto;}
+  body{background:var(--bg);color:var(--ink);font-family:'Fraunces',serif;font-size:16px;line-height:1.65;padding:2rem 1.5rem;max-width:960px;margin:0 auto;}
   .eyebrow{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.22em;color:var(--muted);text-transform:uppercase;margin-bottom:0.5rem;}
   .masthead{border-bottom:3px solid var(--accent);padding-bottom:1.4rem;margin-bottom:1.8rem;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;}
   h1{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--ink);line-height:1;letter-spacing:-0.02em;margin:0;}
   .date-range{font-family:'DM Mono',monospace;font-size:0.85rem;color:var(--ink-dim);margin-top:0.5rem;}
   .source-note{font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:right;line-height:1.6;}
-  h2{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:var(--ink);margin:0 0 1rem;}
+  h2{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:var(--ink);margin:0 0 0.4rem;}
+  .section-sub{font-family:'DM Mono',monospace;font-size:0.78rem;color:var(--ink-dim);margin-bottom:1.1rem;}
   .section{margin-bottom:2.4rem;}
   .card{background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:10px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
   .card-title{font-family:'DM Mono',monospace;font-size:0.66rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:0.9rem;}
@@ -31,16 +32,38 @@
   .grp li{font-size:0.92rem;color:var(--ink);padding:0.15rem 0;}
   .grp li::before{content:"–";color:var(--muted);margin-right:0.5rem;}
   .badge-new{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;background:var(--accent-tint);color:var(--accent);padding:0.15rem 0.45rem;border-radius:4px;margin-left:0.4rem;text-transform:uppercase;}
-  .recipe-name{font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:0.2rem;}
-  .recipe-meta{font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--ink-dim);margin-bottom:1rem;}
-  .recipe-cols{display:grid;grid-template-columns:1fr 1.4fr;gap:1.6rem;}
+  .badge-live{font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.08em;background:#fff0d6;color:#8a5a00;padding:0.15rem 0.45rem;border-radius:4px;margin-left:0.4rem;text-transform:uppercase;}
+
+  /* dynamic shopping card */
+  #dynamic-list-empty{color:var(--muted);font-style:italic;font-size:0.88rem;}
+  .budget-row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.4rem 1.2rem;margin-top:1.2rem;padding-top:1.1rem;border-top:1px dashed var(--border);}
+  .budget-label{font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+  .budget-value{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:var(--accent);}
+  .budget-target{font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--ink-dim);}
+  .budget-target.warn{color:#a8462e;}
+
+  /* recipe picker */
+  .picker-header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;}
+  .picker-count{font-family:'DM Mono',monospace;font-size:0.85rem;color:var(--ink-dim);}
+  .picker-count strong{color:var(--accent);font-size:1rem;}
+  .recipe-grid{display:grid;grid-template-columns:1fr;gap:1.1rem;}
+  .recipe-card{background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--muted);border-radius:10px;padding:1.3rem 1.5rem;opacity:0.5;filter:grayscale(0.4);transition:opacity 0.18s ease, filter 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;}
+  .recipe-card.is-selected{opacity:1;filter:none;border-top-color:var(--accent);box-shadow:0 0 0 2px var(--accent-tint) inset;}
+  .recipe-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:0.2rem;}
+  .recipe-toggle{display:flex;align-items:center;gap:0.5rem;font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.05em;color:var(--ink-dim);cursor:pointer;user-select:none;white-space:nowrap;}
+  .recipe-toggle input{width:1.05rem;height:1.05rem;accent-color:var(--accent);cursor:pointer;}
+  .recipe-name{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--ink);}
+  .recipe-meta{font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--ink-dim);margin-bottom:0.9rem;}
+  .recipe-cols{display:grid;grid-template-columns:1fr 1.4fr;gap:1.4rem;}
   @media(max-width:640px){.recipe-cols{grid-template-columns:1fr;}}
-  .recipe-cols h3{font-family:'DM Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:0 0 0.5rem;}
-  .recipe-cols ul{list-style:none;padding:0;margin:0 0 0.5rem;}
-  .recipe-cols ul li{font-size:0.9rem;padding:0.12rem 0;}
+  .recipe-cols h4{font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin:0 0 0.4rem;}
+  .recipe-cols ul{list-style:none;padding:0;margin:0 0 0.3rem;}
+  .recipe-cols ul li{font-size:0.86rem;padding:0.1rem 0;}
   .recipe-cols ul li::before{content:"–";color:var(--muted);margin-right:0.5rem;}
-  .recipe-cols ol{padding-left:1.2rem;margin:0;font-size:0.92rem;}
-  .recipe-cols ol li{padding:0.2rem 0;}
+  .recipe-cols ul li.new-ing::before{content:"✨";margin-right:0.4rem;}
+  .recipe-cols ol{padding-left:1.1rem;margin:0;font-size:0.88rem;}
+  .recipe-cols ol li{padding:0.15rem 0;}
+
   footer{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--muted);line-height:1.8;}
 </style>
 </head>
@@ -60,7 +83,6 @@
 
     <div class="card">
       <div class="card-title">🛒 Vakio-ostokset</div>
-      <div class="recipe-meta" style="margin-bottom:1rem;">Runsaasti hiilareita mukana — Edvin ja Vincent urheilevat paljon ja tarvitsevat energiaa.</div>
       <div class="list-grid">
         <div>
           <div class="grp">
@@ -125,9 +147,6 @@
               <li>Makaroni</li>
               <li>Kaurahiutale</li>
               <li>Spagetti</li>
-              <li>Täysjyväriisi</li>
-              <li>Ruisleipä</li>
-              <li>Hunaja</li>
             </ul>
           </div>
           <div class="grp">
@@ -143,222 +162,332 @@
     </div>
 
     <div class="card">
-      <div class="card-title">🎒 Välipalat pojille (koulun jälkeen yksin kotona)</div>
-      <div class="recipe-meta" style="margin-bottom:1rem;">Ei liettä, ei veistä — nämä pojat voivat ottaa itse. (Banaanit, jogurtti/rahka ja muut hedelmät jo Vakio-ostoksissa.)</div>
+      <div class="card-title">🎒 Välipalat pojille <span class="badge-new">koulun jälkeen yksin kotona</span></div>
       <div class="list-grid">
-        <div>
-          <div class="grp">
-            <ul>
-              <li>Myslipatukat</li>
-              <li>Manteli-pähkinäsekoitus</li>
-              <li>Täysjyväkeksit</li>
-            </ul>
-          </div>
+        <div class="grp">
+          <ul>
+            <li>Myslipatukat</li>
+            <li>Manteli/pähkinäsekoitus</li>
+            <li>Valmis leikkele (kinkku tai juusto)</li>
+          </ul>
         </div>
-        <div>
-          <div class="grp">
-            <ul>
-              <li>Viipalejuusto tai leikkele (esim. kinkku)</li>
-              <li>Näkkileipä</li>
-            </ul>
-          </div>
+        <div class="grp">
+          <ul>
+            <li>Täysjyväkeksit</li>
+            <li>Näkkileipä (jo Ruispalat-rivillä yllä)</li>
+          </ul>
         </div>
       </div>
     </div>
 
     <div class="card">
-      <div class="card-title">✨ Uutta tällä viikolla <span class="badge-new">reseptejä varten</span></div>
-      <div class="list-grid">
+      <div class="card-title">✨ Uutta tällä viikolla <span class="badge-live">päivittyy valintojesi mukaan ⬇️</span></div>
+      <ul class="grp" id="dynamic-list" style="list-style:none;padding:0;margin:0;"></ul>
+      <div class="budget-row">
         <div>
-          <div class="grp">
-            <div class="grp-label">Hedelmät &amp; vihannekset</div>
-            <ul>
-              <li>Sipuli</li>
-              <li>Mangokuutiot, purkki</li>
-              <li>Porkkana, 1 kg</li>
-              <li>Purjo</li>
-            </ul>
-          </div>
+          <div class="budget-label">Arvioitu tilauksen loppusumma</div>
+          <div class="budget-value" id="budget-total">– €</div>
         </div>
-        <div>
-          <div class="grp">
-            <div class="grp-label">Muut</div>
-            <ul>
-              <li>Kananmunat (jos M10-pakkaus ei riitä)</li>
-              <li>Muskottipähkinä (jos ei jo kaapissa)</li>
-              <li>Tortillaletut, 8–10 kpl</li>
-              <li>Paprikajauhe (jos ei jo kaapissa)</li>
-              <li>Kalapuikkoja, pakaste, n. 750 g</li>
-              <li>Majoneesi</li>
-              <li>Piccalilli tai piparjuuriraaste</li>
-              <li>Korppujauhot</li>
-              <li>Vehnäjauho</li>
-              <li>Voi</li>
-              <li>Nakit</li>
-            </ul>
-          </div>
-        </div>
+        <div class="budget-target" id="budget-target">tavoite 200–250 €</div>
       </div>
     </div>
   </div>
 
   <div class="section">
-    <h2>Viikon uudet reseptit</h2>
+    <h2>Valitse viikon ruoat</h2>
+    <div class="section-sub">10 ehdotusta — 5 on valittu valmiiksi (arki-illat), loput ovat vaihtoehtoja. Ruksi/poista ruksi vapaasti: ostoslista ja hinta-arvio yllä päivittyvät heti.</div>
 
-    <div class="card">
-      <div class="recipe-name">Uunimakaronilaatikko jauhelihalla ja juustolla</div>
-      <div class="recipe-meta">5 annosta · n. 35 min (15 min tekoa, loput uunissa)</div>
-      <div class="recipe-cols">
-        <div>
-          <h3>Ainekset</h3>
-          <ul>
-            <li>300 g makaronia</li>
-            <li>500 g kevyttä nauta-hernejauhista</li>
-            <li>1 sipuli, hienonnettuna</li>
-            <li>3 dl maitoa</li>
-            <li>2 kananmunaa</li>
-            <li>1,5 dl juustoraastetta (+ vähän pinnalle)</li>
-            <li>ripaus muskottipähkinää</li>
-            <li>suolaa, mustapippuria</li>
-            <li>1 rkl öljyä paistamiseen</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Ohje</h3>
-          <ol>
-            <li>Keitä makaroni kypsäksi, valuta.</li>
-            <li>Ruskista sipuli ja jauhis pannulla, mausta suolalla ja pippurilla.</li>
-            <li>Sekoita kulhossa maito, kananmunat, muskottipähkinä ja puolet juustoraasteesta.</li>
-            <li>Levitä makaroni ja jauhelihaseos voideltuun uunivuokaan, kaada munaseos päälle, ripottele loppu juusto pinnalle.</li>
-            <li>Paista 200 °C uunissa n. 25 min, kunnes pinta on kullanruskea.</li>
-            <li>Anna vetäytyä hetki ennen tarjoilua.</li>
-          </ol>
-        </div>
-      </div>
+    <div class="picker-header">
+      <div class="picker-count">Valittu: <strong id="recipe-count">–</strong> / 10 reseptiä</div>
     </div>
 
-    <div class="card">
-      <div class="recipe-name">Broilerfilee-tortillat juustolla ja mangosalsalla</div>
-      <div class="recipe-meta">5 annosta · n. 20 min</div>
-      <div class="recipe-cols">
-        <div>
-          <h3>Ainekset</h3>
-          <ul>
-            <li>500 g kanan rintafilettä, suikaloituna</li>
-            <li>1 rkl öljyä</li>
-            <li>suolaa, paprikajauhetta, mustapippuria</li>
-            <li>8–10 tortillalettua</li>
-            <li>1,5 dl juustoraastetta</li>
-            <li>1 paprika, suikaloituna</li>
-            <li><em>Mangosalsa:</em> mangokuutioita, puolikas punainen paprika kuutioina, 1 lime (mehu), ripaus suolaa</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Ohje</h3>
-          <ol>
-            <li>Sekoita mangosalsan ainekset kulhossa, anna maustua jääkaapissa hetki.</li>
-            <li>Mausta kanasuikaleet suolalla, paprikajauheella ja pippurilla, paista kypsiksi pannulla öljyssä.</li>
-            <li>Lisää paprikasuikaleet loppuvaiheessa mukaan.</li>
-            <li>Lämmitä tortillat.</li>
-            <li>Kokoa: tortillalle kanaa, juustoraastetta ja mangosalsaa. Lapset saavat halutessaan koota omansa itse.</li>
-          </ol>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="recipe-name">Uunikalapuikot perunalohkoilla ja remouladilla</div>
-      <div class="recipe-meta">5 annosta · n. 25 min</div>
-      <div class="recipe-cols">
-        <div>
-          <h3>Ainekset</h3>
-          <ul>
-            <li>n. 750 g pakastekalapuikkoja</li>
-            <li>1 kg perunaa, lohkoiksi leikattuna</li>
-            <li>2 rkl öljyä</li>
-            <li>suolaa, paprikajauhetta</li>
-            <li><em>Remouladi:</em> 2 dl majoneesia, 1 rkl piccalillia tai piparjuuriraastetta, ripaus sokeria ja etikkaa</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Ohje</h3>
-          <ol>
-            <li>Kuumenna uuni 220 °C.</li>
-            <li>Sekoita perunalohkot öljyyn, suolaan ja paprikajauheeseen, levitä uunipellille.</li>
-            <li>Paista n. 20 min, käännä puolivälissä.</li>
-            <li>Paista kalapuikot pakkauksen ohjeen mukaan samaan aikaan.</li>
-            <li>Sekoita remouladin ainekset ja tarjoile kalapuikkojen ja perunalohkojen kanssa.</li>
-          </ol>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="recipe-name">Lihapullat perunamuusilla ja ruskealla kastikkeella</div>
-      <div class="recipe-meta">5 annosta · n. 30 min</div>
-      <div class="recipe-cols">
-        <div>
-          <h3>Ainekset</h3>
-          <ul>
-            <li>500 g kevyttä nauta-hernejauhista</li>
-            <li>1 muna</li>
-            <li>1 dl korppujauhoja</li>
-            <li>0,5 dl maitoa</li>
-            <li>1 pieni sipuli, hienonnettuna</li>
-            <li>suolaa, mustapippuria</li>
-            <li>1 kg perunaa, 2 dl maitoa ja 40 g voita muusiin</li>
-            <li><em>Kastike:</em> 3 dl lihalientä, 1 rkl vehnäjauhoa, 1 dl kermaa</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Ohje</h3>
-          <ol>
-            <li>Sekoita jauheliha, muna, korppujauhot, maito, sipuli ja mausteet, muotoile pulliksi.</li>
-            <li>Paista pullat pannulla kypsiksi.</li>
-            <li>Keitä perunat kypsiksi, soseuta maidon ja voin kanssa muusiksi.</li>
-            <li>Ruskista jauho pannulla rasvassa, lisää liemi ja kerma, keitä kunnes suurustuu.</li>
-            <li>Tarjoile lihapullat muusin ja kastikkeen kanssa.</li>
-          </ol>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="recipe-name">Juureskeitto nakkien kanssa</div>
-      <div class="recipe-meta">5 annosta · n. 25 min</div>
-      <div class="recipe-cols">
-        <div>
-          <h3>Ainekset</h3>
-          <ul>
-            <li>4–5 nakkia, viipaloituna</li>
-            <li>3 perunaa, kuutioituna</li>
-            <li>2 porkkanaa, kuutioituna</li>
-            <li>1 purjo, siivutettuna</li>
-            <li>1 varsi selleriä, siivutettuna</li>
-            <li>1 l vettä tai lihalientä</li>
-            <li>1 dl kermaa</li>
-            <li>suolaa, mustapippuria, tuoretta timjamia tai persiljaa</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Ohje</h3>
-          <ol>
-            <li>Kuullota purjo ja selleri kattilassa.</li>
-            <li>Lisää peruna ja porkkana, kaada päälle vesi tai liemi.</li>
-            <li>Keitä n. 15 min, kunnes juurekset ovat kypsiä.</li>
-            <li>Lisää nakkiviipaleet ja kerma, kuumenna läpi.</li>
-            <li>Mausta suolalla, pippurilla ja yrteillä.</li>
-          </ol>
-        </div>
-      </div>
-    </div>
+    <div class="recipe-grid" id="recipe-grid"></div>
   </div>
 
   <footer>
     Koostettu 14.8.2026 kahden viimeisimmän S-kaupat-tilauksen (24.7. ja 7.8.2026) perusteella.<br>
-    Vakio-ostokset = tuotteet jotka esiintyivät molemmissa tilauksissa. Uudet reseptit tarkistettu used-recipes.md:stä, ei toistoa n. 2 kk sisällä.<br>
-    Arvioitu tilauksen loppusumma: <strong>n. 215–220 €</strong> (vakio-ostokset kuittihinnoin + karkea arvio uusista tuotteista ja välipaloista) — tavoite 200–250 €, ei live-hintatarkistus.
+    Vakio-ostokset = tuotteet jotka esiintyivät molemmissa tilauksissa. Reseptit tarkistettu used-recipes.md:stä, ei toistoa n. 2 kk sisällä.<br>
+    Hinta-arvio: vakio-ostokset kuittihinnoin (n. 171 €) + välipalat-arvio (n. 12 €) + valittujen reseptien uudet tuotteet — karkea arvio, ei live-hintatarkistus.
   </footer>
+
+<script>
+// ---- Hinnoitellut uudet tuotteet (jaettu resepteissä, lasketaan vain kerran per tuote) ----
+const ITEM_PRICES = {
+  sipuli: 1, mangokuutiot: 3, kananmunat_lisa: 3, muskottipahkina: 2,
+  tortillaletut: 2.5, paprikajauhe: 2, kalapuikkoja: 5, majoneesi: 2.5,
+  piccalilli: 3, korppujauhot: 1.5, vehnajauho: 1, voi: 2.5, kerma: 2,
+  lihaliemi: 2, nakit: 3, porkkana: 1.5, purjo: 2, palsternakka: 2,
+  kinkkusiivut: 3, riisi: 2, tomaattimurska: 1.5, lohifile: 9,
+  kuohukerma: 2, pekoni: 3, makkarat: 4
+};
+const ITEM_LABELS = {
+  sipuli: "Sipuli", mangokuutiot: "Mangokuutiot, purkki", kananmunat_lisa: "Kananmunat (lisäpakkaus)",
+  muskottipahkina: "Muskottipähkinä", tortillaletut: "Tortillaletut", paprikajauhe: "Paprikajauhe",
+  kalapuikkoja: "Kalapuikkoja, pakaste n. 750 g", majoneesi: "Majoneesi", piccalilli: "Piccalilli tai piparjuuriraaste",
+  korppujauhot: "Korppujauhot", vehnajauho: "Vehnäjauho", voi: "Voi", kerma: "Kerma",
+  lihaliemi: "Lihaliemikuutio/-jauhe", nakit: "Nakit", porkkana: "Porkkana", purjo: "Purjo",
+  palsternakka: "Palsternakka", kinkkusiivut: "Kinkkusiivut", riisi: "Riisi", tomaattimurska: "Tomaattimurska, tlk",
+  lohifile: "Lohifile", kuohukerma: "Kuohukerma", pekoni: "Pekoni", makkarat: "Grillimakkarat"
+};
+const FIXED_BASE = 170.72 + 12; // vakio-ostokset kuittihinnoin + välipalat-arvio
+
+// ---- Reseptit ----
+// ing(): {text, key} — key=null tarkoittaa että ainesosa on jo vakio-ostoksissa, ei lasketa uudelleen.
+function ing(text, key) { return { text, key: key || null }; }
+
+const RECIPES = [
+  {
+    id: "makaronilaatikko", selected: true,
+    name: "Uunimakaronilaatikko jauhelihalla ja juustolla", meta: "5 annosta · n. 35 min",
+    ingredients: [
+      ing("300 g makaronia"), ing("500 g kevyttä nauta-hernejauhista"),
+      ing("1 sipuli, hienonnettuna", "sipuli"), ing("3 dl maitoa"),
+      ing("2 kananmunaa (jos M10-pakkaus ei riitä)", "kananmunat_lisa"),
+      ing("1,5 dl juustoraastetta"), ing("ripaus muskottipähkinää", "muskottipahkina"),
+      ing("suolaa, mustapippuria")
+    ],
+    steps: [
+      "Keitä makaroni kypsäksi, valuta.",
+      "Ruskista sipuli ja jauhis pannulla, mausta suolalla ja pippurilla.",
+      "Sekoita kulhossa maito, kananmunat, muskottipähkinä ja puolet juustoraasteesta.",
+      "Levitä makaroni ja jauhelihaseos voideltuun uunivuokaan, kaada munaseos päälle, ripottele loppu juusto pinnalle.",
+      "Paista 200 °C uunissa n. 25 min, kunnes pinta on kullanruskea."
+    ]
+  },
+  {
+    id: "tortillat", selected: true,
+    name: "Broilerfilee-tortillat juustolla ja mangosalsalla", meta: "5 annosta · n. 20 min",
+    ingredients: [
+      ing("500 g kanan rintafilettä, suikaloituna"), ing("1 rkl öljyä"),
+      ing("suolaa, paprikajauhetta, mustapippuria", "paprikajauhe"),
+      ing("8–10 tortillalettua", "tortillaletut"), ing("1,5 dl juustoraastetta"),
+      ing("1 paprika, suikaloituna"),
+      ing("Mangosalsa: mangokuutioita, puolikas paprika, 1 lime, ripaus suolaa", "mangokuutiot")
+    ],
+    steps: [
+      "Sekoita mangosalsan ainekset, anna maustua jääkaapissa hetki.",
+      "Mausta kanasuikaleet, paista kypsiksi pannulla öljyssä.",
+      "Lisää paprikasuikaleet loppuvaiheessa mukaan.",
+      "Lämmitä tortillat.",
+      "Kokoa: tortillalle kanaa, juustoraastetta ja mangosalsaa."
+    ]
+  },
+  {
+    id: "kalapuikot", selected: true,
+    name: "Uunikalapuikot perunalohkoilla ja remouladilla", meta: "5 annosta · n. 25 min",
+    ingredients: [
+      ing("n. 750 g pakastekalapuikkoja", "kalapuikkoja"), ing("1 kg perunaa, lohkoiksi"),
+      ing("2 rkl öljyä"), ing("suolaa, paprikajauhetta", "paprikajauhe"),
+      ing("Remouladi: 2 dl majoneesia", "majoneesi"),
+      ing("1 rkl piccalillia tai piparjuuriraastetta", "piccalilli")
+    ],
+    steps: [
+      "Kuumenna uuni 220 °C.",
+      "Sekoita perunalohkot öljyyn, suolaan ja paprikajauheeseen, levitä pellille.",
+      "Paista n. 20 min, käännä puolivälissä.",
+      "Paista kalapuikot pakkauksen ohjeen mukaan samaan aikaan.",
+      "Sekoita remouladin ainekset ja tarjoile."
+    ]
+  },
+  {
+    id: "lihapullat", selected: true,
+    name: "Lihapullat perunamuusilla ja ruskealla kastikkeella", meta: "5 annosta · n. 30 min",
+    ingredients: [
+      ing("500 g kevyttä nauta-hernejauhista"), ing("1 muna"),
+      ing("1 dl korppujauhoja", "korppujauhot"), ing("0,5 dl maitoa"),
+      ing("1 pieni sipuli, hienonnettuna", "sipuli"), ing("suolaa, mustapippuria"),
+      ing("1 kg perunaa, 2 dl maitoa, 40 g voita muusiin", "voi"),
+      ing("Kastike: 3 dl lihalientä", "lihaliemi"),
+      ing("1 rkl vehnäjauhoa", "vehnajauho"), ing("1 dl kermaa", "kerma")
+    ],
+    steps: [
+      "Sekoita jauheliha, muna, korppujauhot, maito, sipuli ja mausteet, muotoile pulliksi.",
+      "Paista pullat pannulla kypsiksi.",
+      "Keitä perunat, soseuta maidon ja voin kanssa muusiksi.",
+      "Ruskista jauho rasvassa, lisää liemi ja kerma, keitä kunnes suurustuu.",
+      "Tarjoile lihapullat muusin ja kastikkeen kanssa."
+    ]
+  },
+  {
+    id: "juureskeitto", selected: true,
+    name: "Juureskeitto nakkien kanssa", meta: "5 annosta · n. 25 min",
+    ingredients: [
+      ing("4–5 nakkia, viipaloituna", "nakit"), ing("3 perunaa, kuutioituna"),
+      ing("2 porkkanaa, kuutioituna", "porkkana"), ing("1 purjo, siivutettuna", "purjo"),
+      ing("1 varsi selleriä, siivutettuna"), ing("1 l vettä tai lihalientä"),
+      ing("1 dl kermaa", "kerma"), ing("suolaa, mustapippuria, yrttejä")
+    ],
+    steps: [
+      "Kuullota purjo ja selleri kattilassa.",
+      "Lisää peruna ja porkkana, kaada päälle vesi tai liemi.",
+      "Keitä n. 15 min, kunnes juurekset ovat kypsiä.",
+      "Lisää nakkiviipaleet ja kerma, kuumenna läpi.",
+      "Mausta suolalla, pippurilla ja yrteillä."
+    ]
+  },
+  {
+    id: "makkarat", selected: false,
+    name: "Uunimakkarat ja paahdetut juurekset", meta: "5 annosta · n. 30 min",
+    ingredients: [
+      ing("6–8 grillimakkaraa", "makkarat"), ing("1 kg perunaa, lohkoiksi"),
+      ing("2 porkkanaa, lohkoiksi", "porkkana"), ing("2 palsternakkaa, lohkoiksi", "palsternakka"),
+      ing("2 rkl öljyä"), ing("suolaa, timjamia")
+    ],
+    steps: [
+      "Kuumenna uuni 220 °C.",
+      "Sekoita juurekset öljyyn ja mausteisiin, levitä pellille.",
+      "Paista 20 min, lisää makkarat pellille, paista vielä 10–15 min.",
+      "Tarjoile suoraan pellistä."
+    ]
+  },
+  {
+    id: "pinaattiletut", selected: false,
+    name: "Pinaattiletut kinkulla", meta: "5 annosta · n. 25 min",
+    ingredients: [
+      ing("200 g tuoretta pinaattia"), ing("3 munaa"), ing("6 dl maitoa"),
+      ing("3 dl vehnäjauhoa", "vehnajauho"), ing("suolaa"), ing("voita paistamiseen", "voi"),
+      ing("200 g kinkkusiivuja", "kinkkusiivut")
+    ],
+    steps: [
+      "Soseuta pinaatti, munat ja maito sauvasekoittimella.",
+      "Sekoita joukkoon jauho ja suola, anna taikinan turvota hetki.",
+      "Paista letut pannulla voissa kullanruskeiksi.",
+      "Tarjoile kinkkusiivujen ja halutessa puolukkahillon kanssa."
+    ]
+  },
+  {
+    id: "broileripata", selected: false,
+    name: "Broileripata paprikalla, tomaatilla ja riisillä", meta: "5 annosta · n. 30 min",
+    ingredients: [
+      ing("500 g kanan rintafilettä, suikaloituna"), ing("1 paprika, suikaloituna"),
+      ing("1 sipuli, silputtuna", "sipuli"), ing("1 tlk (400 g) tomaattimurskaa", "tomaattimurska"),
+      ing("3 dl riisiä", "riisi"), ing("1 rkl öljyä"), ing("suolaa, mustapippuria, oreganoa")
+    ],
+    steps: [
+      "Keitä riisi paketin ohjeen mukaan.",
+      "Ruskista kana ja sipuli öljyssä kattilassa.",
+      "Lisää paprika ja tomaattimurska, anna hautua n. 15 min.",
+      "Mausta suolalla, pippurilla ja oreganolla.",
+      "Tarjoile riisin kanssa."
+    ]
+  },
+  {
+    id: "lohikiusaus", selected: false,
+    name: "Lohikiusaus", meta: "5 annosta · n. 40 min",
+    ingredients: [
+      ing("400 g lohifileetä, kuutioituna", "lohifile"), ing("1 kg perunaa, tikkuina"),
+      ing("1 sipuli, renkaina", "sipuli"), ing("5 dl kuohukermaa", "kuohukerma"),
+      ing("suolaa, valkopippuria, tilliä")
+    ],
+    steps: [
+      "Kuumenna uuni 200 °C.",
+      "Kerrostele peruna, sipuli ja lohi voideltuun uunivuokaan.",
+      "Mausta suolalla ja pippurilla, kaada kerma päälle.",
+      "Paista n. 35–40 min kunnes peruna on kypsä.",
+      "Ripottele tilliä pinnalle ennen tarjoilua."
+    ]
+  },
+  {
+    id: "pekonikana", selected: false,
+    name: "Pekonikääretty broileri uunijuureksilla", meta: "5 annosta · n. 30 min",
+    ingredients: [
+      ing("5 kanan rintafileetä"), ing("10 viipaletta pekonia", "pekoni"),
+      ing("1 kg perunaa, lohkoiksi"), ing("2 porkkanaa, lohkoiksi", "porkkana"),
+      ing("2 palsternakkaa, lohkoiksi", "palsternakka"), ing("2 rkl öljyä"), ing("suolaa, rosmariinia")
+    ],
+    steps: [
+      "Kuumenna uuni 200 °C.",
+      "Kääri jokainen kanafile kahteen pekonisiivuun.",
+      "Sekoita juurekset öljyyn ja mausteisiin, levitä pellille, aseta kanat päälle.",
+      "Paista n. 30 min kunnes kana on kypsä ja pekoni rapea."
+    ]
+  }
+];
+
+// ---- Rakenna reseptikortit ----
+const grid = document.getElementById("recipe-grid");
+RECIPES.forEach(r => {
+  const card = document.createElement("div");
+  card.className = "recipe-card" + (r.selected ? " is-selected" : "");
+  card.dataset.id = r.id;
+
+  const ingHtml = r.ingredients.map(i =>
+    `<li${i.key ? ' class="new-ing"' : ''}>${i.text}</li>`
+  ).join("");
+  const stepHtml = r.steps.map(s => `<li>${s}</li>`).join("");
+
+  card.innerHTML = `
+    <div class="recipe-card-head">
+      <div>
+        <div class="recipe-name">${r.name}</div>
+        <div class="recipe-meta">${r.meta}</div>
+      </div>
+      <label class="recipe-toggle">
+        <input type="checkbox" class="recipe-select" data-id="${r.id}" ${r.selected ? "checked" : ""}>
+        mukana tällä viikolla
+      </label>
+    </div>
+    <div class="recipe-cols">
+      <div>
+        <h4>Ainekset (✨ = uusi tuote)</h4>
+        <ul>${ingHtml}</ul>
+      </div>
+      <div>
+        <h4>Ohje</h4>
+        <ol>${stepHtml}</ol>
+      </div>
+    </div>
+  `;
+  grid.appendChild(card);
+});
+
+// ---- Live-päivitys ----
+function render() {
+  const boxes = [...document.querySelectorAll(".recipe-select")];
+  const selectedIds = boxes.filter(b => b.checked).map(b => b.dataset.id);
+
+  document.querySelectorAll(".recipe-card").forEach(card => {
+    card.classList.toggle("is-selected", selectedIds.includes(card.dataset.id));
+  });
+
+  const keys = new Set();
+  RECIPES.filter(r => selectedIds.includes(r.id)).forEach(r => {
+    r.ingredients.forEach(i => { if (i.key) keys.add(i.key); });
+  });
+
+  const list = document.getElementById("dynamic-list");
+  list.innerHTML = "";
+  if (keys.size === 0) {
+    list.innerHTML = '<li id="dynamic-list-empty">Ei uusia tuotteita valituilla resepteillä.</li>';
+  } else {
+    [...keys].sort((a, b) => ITEM_LABELS[a].localeCompare(ITEM_LABELS[b], "fi"))
+      .forEach(k => {
+        const li = document.createElement("li");
+        li.textContent = ITEM_LABELS[k];
+        list.appendChild(li);
+      });
+  }
+
+  let dynamicSum = 0;
+  keys.forEach(k => dynamicSum += ITEM_PRICES[k]);
+  const total = FIXED_BASE + dynamicSum;
+  document.getElementById("budget-total").textContent = "n. " + Math.round(total) + " €";
+
+  const targetEl = document.getElementById("budget-target");
+  if (total < 190 || total > 260) {
+    targetEl.textContent = "tavoite 200–250 € — nyt selvästi " + (total < 190 ? "alle" : "yli");
+    targetEl.classList.add("warn");
+  } else {
+    targetEl.textContent = "tavoite 200–250 €";
+    targetEl.classList.remove("warn");
+  }
+
+  document.getElementById("recipe-count").textContent = selectedIds.length;
+}
+
+document.querySelectorAll(".recipe-select").forEach(b => b.addEventListener("change", render));
+render();
+</script>
 
 </body>
 </html>
