@@ -15,16 +15,17 @@
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:var(--bg);color:var(--ink);font-family:'Fraunces',serif;font-size:16px;line-height:1.65;padding:2rem 1.5rem;max-width:920px;margin:0 auto;}
   .eyebrow{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.22em;color:var(--muted);text-transform:uppercase;margin-bottom:0.5rem;}
-  .masthead{border-bottom:3px solid var(--c2);padding-bottom:1.4rem;margin-bottom:1.8rem;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;}
+  .masthead{border-bottom:3px solid var(--accent);padding-bottom:1.4rem;margin-bottom:1.8rem;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;}
   h1{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--ink);line-height:1;letter-spacing:-0.02em;}
   .date-range{font-family:'DM Mono',monospace;font-size:0.85rem;color:var(--ink-dim);margin-top:0.5rem;}
+  .source-note{font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:right;line-height:1.6;}
 
   .child{margin-bottom:2.4rem;border-left:3px solid var(--line-color,var(--border));padding-left:1.4rem;}
   .child-name{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:1rem;display:flex;align-items:center;gap:0.55rem;}
   .dot{width:0.6rem;height:0.6rem;border-radius:50%;display:inline-block;}
   .child-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:1.2rem;}
   .child-grid.single{grid-template-columns:1fr;}
-  @media(max-width:680px){.child-grid{grid-template-columns:1fr;} .masthead{align-items:flex-start;}}
+  @media(max-width:680px){.child-grid{grid-template-columns:1fr;} .masthead{align-items:flex-start;} .source-note{text-align:left;}}
 
   .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.3rem 1.4rem;min-width:0;}
   .card-title{font-family:'DM Mono',monospace;font-size:0.66rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:0.9rem;}
@@ -48,9 +49,10 @@
   .timetable-full td:first-child,.timetable-full th:first-child{text-align:left;color:var(--muted);font-family:'DM Mono',monospace;position:sticky;left:0;background:var(--surface);z-index:1;box-shadow:1px 0 0 var(--border);}
   .timetable-full tr.tt-break td{color:var(--muted);opacity:0.6;font-style:italic;}
   .timetable-full tr:last-child td{border-bottom:none;}
-  .timetable-full .tt-note{font-family:'DM Mono',monospace;font-size:0.58rem;color:var(--muted);margin-top:0.5rem;line-height:1.5;}
   .grp li{font-size:0.9rem;padding:0.3rem 0;line-height:1.55;}
   .grp li::before{content:"–";color:var(--muted);margin-right:0.5rem;}
+
+  .badge-new{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;background:var(--accent-tint);color:var(--accent);padding:0.15rem 0.45rem;border-radius:4px;margin-left:0.4rem;text-transform:uppercase;}
 
   footer{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--muted);line-height:1.8;}
 </style>
@@ -71,11 +73,11 @@
     <div class="child-grid">
       <div class="card">
         <div class="card-title">⚽🏀 Harrastukset</div>
-        <div class="event"><span class="when">Ma 15–17</span><span class="what">Jalkapallo, PPJ L16 Yhteistreenit<br><span class="where">Ruukinlahden tekonurmi</span></span></div>
-        <div class="event"><span class="when">Ti 18.30–20</span><span class="what">Koripallo, P16 treenit 1/2<br><span class="where">Crusellin peruskoulu</span></span></div>
-        <div class="event"><span class="when">Ke 15.30–17</span><span class="what">Jalkapallo, ulkokauden treenit SINIVALKO<br><span class="where">Ruukinlahden tekonurmi</span></span></div>
-        <div class="event"><span class="when">To 16–17.45</span><span class="what">Koripallo, P16 treenit<br><span class="where">Lauttasaaren Yhteiskoulu 1</span></span></div>
-        <div class="event"><span class="when">Pe 14.45–15.45</span><span class="what">Koripallo, Espoo liikkuu -turnaus (sitova ilmoittautuminen)<br><span class="where">Espoo</span></span></div>
+        <div class="event"><span class="when">Ma 15:00–17:00</span><span class="what">Jalkapallo: PPJ Laru 2016, Yhteistreenit<br><span class="where">Ruukinlahden tekonurmi, Lauttasaarentie 51, 00200 Helsinki</span></span></div>
+        <div class="event"><span class="when">Ti 18:30–20:00</span><span class="what">Koripallo: Pojat 2016, P16 treenit 1/2<br><span class="where">Crusellin peruskoulu, Santakatu 6, 00180 Helsinki</span></span></div>
+        <div class="event"><span class="when">Ke 15:30–17:00</span><span class="what">Jalkapallo: PPJ L16, ulkokauden treenit SINIVALKO<br><span class="where">Ruukinlahden tekonurmi, Lauttasaarentie 51, 00200 Helsinki</span></span></div>
+        <div class="event"><span class="when">To 16:00–17:45</span><span class="what">Koripallo: Pojat 2016, P16 treenit<br><span class="where">Lauttasaaren Yhteiskoulu 1, Isokaari 19, 00200 Helsinki</span></span></div>
+        <div class="event"><span class="when">Pe 14:45–15:45</span><span class="what">Koripallo: Espoo liikkuu-turnaus 21.–23.8.2026, sitova ilmoittautuminen<br><span class="where">Espoo</span></span></div>
       </div>
       <div class="card">
         <div class="card-title">🎒 Koulu</div>
@@ -95,13 +97,13 @@
           <div class="grp-label">Muuta tällä viikolla</div>
           <ul>
             <li>Vecka 34: skoldagar enligt schema (schemat i ryggsäcken, kommer snart även till Wilma)</li>
-            <li>Ti: utegymnastik — mjuka kläder enligt väder</li>
-            <li>Ke: utrymnings- och inrymningsövning — ta med inneskor</li>
-            <li>To: skolfreden utlyses, temat "För gemenskap"</li>
+            <li>Utegymnastik (ti) — mjuka kläder enligt väder</li>
+            <li>Utrymnings- och inrymningsövning (ons) — ta med inneskor</li>
+            <li>Skolfreden utlyses (tors), temat "För gemenskap"</li>
           </ul>
         </div>
         <div class="timetable-full">
-          <div class="ttl">🕐 Lukujärjestys (kiinteä) — 4LA</div>
+          <div class="ttl">🕐 Lukujärjestys (kiinteä) — skoldagens längd: Mån 8.15–14.00, Tis 8.15–13.00, Ons 9.00–14.00, Tors 8.15–13.00, Fre 9.00–13.00</div>
           <div class="tt-scroll">
             <table>
               <tr><th>Tid</th><th>Mån</th><th>Tis</th><th>Ons</th><th>Tor</th><th>Fre</th></tr>
@@ -117,14 +119,13 @@
               <tr><td>13:15–14:00</td><td>EN (Emma)</td><td>–</td><td>X</td><td>–</td><td>–</td></tr>
             </table>
           </div>
-          <div class="tt-note">Koulupäivän kesto vaihtelee: Ma 8.15–14, Ti 8.15–13, Ke 9–14, To 8.15–13, Pe 9–13. Luokanopettaja: Linda Ahlroos (4LA).</div>
         </div>
       </div>
     </div>
   </div>
 
   <footer>
-    Koostettu automaattisesti myClubista sekä Wilman viikkotiedotteesta.
+    Koostettu automaattisesti (mode=full) 15.8.2026 — myClub-kalenteri ICS:nä, viikkotiedote aiemmin tallennetusta tiedotteet/2026-08-17.json:sta.
   </footer>
 
 </body>
