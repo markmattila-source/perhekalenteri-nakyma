@@ -42,16 +42,12 @@
   .budget-target{font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--ink-dim);}
   .budget-target.warn{color:#a8462e;}
 
-  /* recipe picker */
-  .picker-header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;}
-  .picker-count{font-family:'DM Mono',monospace;font-size:0.85rem;color:var(--ink-dim);}
-  .picker-count strong{color:var(--accent);font-size:1rem;}
-  .recipe-grid{display:grid;grid-template-columns:1fr;gap:1.1rem;}
-  .recipe-card{background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--muted);border-radius:10px;padding:1.3rem 1.5rem;opacity:0.5;filter:grayscale(0.4);transition:opacity 0.18s ease, filter 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;}
-  .recipe-card.is-selected{opacity:1;filter:none;border-top-color:var(--accent);box-shadow:0 0 0 2px var(--accent-tint) inset;}
-  .recipe-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:0.2rem;}
-  .recipe-toggle{display:flex;align-items:center;gap:0.5rem;font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.05em;color:var(--ink-dim);cursor:pointer;user-select:none;white-space:nowrap;}
-  .recipe-toggle input{width:1.05rem;height:1.05rem;accent-color:var(--accent);cursor:pointer;}
+  /* recipe picker — one dropdown per evening, only the chosen recipe's card shows */
+  .slot-grid{display:flex;flex-direction:column;gap:1.1rem;}
+  .slot{background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:10px;padding:1.3rem 1.5rem;}
+  .slot-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem 1rem;margin-bottom:0.9rem;}
+  .slot-day{font-family:'DM Mono',monospace;font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);font-weight:500;}
+  .slot-select{font-family:'Fraunces',serif;font-size:1rem;padding:0.5rem 0.8rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--ink);min-width:0;flex:1 1 18rem;max-width:100%;cursor:pointer;}
   .recipe-name{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--ink);}
   .recipe-meta{font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--ink-dim);margin-bottom:0.9rem;}
   .recipe-cols{display:grid;grid-template-columns:1fr 1.4fr;gap:1.4rem;}
@@ -194,14 +190,10 @@
   </div>
 
   <div class="section">
-    <h2>Valitse viikon ruoat</h2>
-    <div class="section-sub">10 ehdotusta — 5 on valittu valmiiksi (arki-illat), loput ovat vaihtoehtoja. Ruksi/poista ruksi vapaasti: ostoslista ja hinta-arvio yllä päivittyvät heti.</div>
+    <h2>Viikon illat</h2>
+    <div class="section-sub">Yksi resepti per ilta — valitse pudotusvalikosta jos jokin ei kelpaa. 5 muuta vaihtoehtoa on aina valittavissa. Ostoslista ja hinta-arvio yllä päivittyvät heti.</div>
 
-    <div class="picker-header">
-      <div class="picker-count">Valittu: <strong id="recipe-count">–</strong> / 10 reseptiä</div>
-    </div>
-
-    <div class="recipe-grid" id="recipe-grid"></div>
+    <div class="slot-grid" id="slot-grid"></div>
   </div>
 
   <footer>
@@ -237,7 +229,7 @@ function ing(text, key) { return { text, key: key || null }; }
 
 const RECIPES = [
   {
-    id: "makaronilaatikko", selected: true,
+    id: "makaronilaatikko",
     name: "Uunimakaronilaatikko jauhelihalla ja juustolla", meta: "5 annosta · n. 35 min",
     ingredients: [
       ing("300 g makaronia"), ing("500 g kevyttä nauta-hernejauhista"),
@@ -255,7 +247,7 @@ const RECIPES = [
     ]
   },
   {
-    id: "tortillat", selected: true,
+    id: "tortillat",
     name: "Broilerfilee-tortillat juustolla ja mangosalsalla", meta: "5 annosta · n. 20 min",
     ingredients: [
       ing("500 g kanan rintafilettä, suikaloituna"), ing("1 rkl öljyä"),
@@ -273,7 +265,7 @@ const RECIPES = [
     ]
   },
   {
-    id: "kalapuikot", selected: true,
+    id: "kalapuikot",
     name: "Uunikalapuikot perunalohkoilla ja remouladilla", meta: "5 annosta · n. 25 min",
     ingredients: [
       ing("n. 750 g pakastekalapuikkoja", "kalapuikkoja"), ing("1 kg perunaa, lohkoiksi"),
@@ -290,7 +282,7 @@ const RECIPES = [
     ]
   },
   {
-    id: "lihapullat", selected: true,
+    id: "lihapullat",
     name: "Lihapullat perunamuusilla ja ruskealla kastikkeella", meta: "5 annosta · n. 30 min",
     ingredients: [
       ing("500 g kevyttä nauta-hernejauhista"), ing("1 muna"),
@@ -309,7 +301,7 @@ const RECIPES = [
     ]
   },
   {
-    id: "juureskeitto", selected: true,
+    id: "juureskeitto",
     name: "Juureskeitto nakkien kanssa", meta: "5 annosta · n. 25 min",
     ingredients: [
       ing("4–5 nakkia, viipaloituna", "nakit"), ing("3 perunaa, kuutioituna"),
@@ -326,7 +318,7 @@ const RECIPES = [
     ]
   },
   {
-    id: "makkarat", selected: false,
+    id: "makkarat",
     name: "Uunimakkarat ja paahdetut juurekset", meta: "5 annosta · n. 30 min",
     ingredients: [
       ing("6–8 grillimakkaraa", "makkarat"), ing("1 kg perunaa, lohkoiksi"),
@@ -341,7 +333,7 @@ const RECIPES = [
     ]
   },
   {
-    id: "pinaattiletut", selected: false,
+    id: "pinaattiletut",
     name: "Pinaattiletut kinkulla", meta: "5 annosta · n. 25 min",
     ingredients: [
       ing("200 g tuoretta pinaattia"), ing("3 munaa"), ing("6 dl maitoa"),
@@ -356,7 +348,7 @@ const RECIPES = [
     ]
   },
   {
-    id: "broileripata", selected: false,
+    id: "broileripata",
     name: "Broileripata paprikalla, tomaatilla ja riisillä", meta: "5 annosta · n. 30 min",
     ingredients: [
       ing("500 g kanan rintafilettä, suikaloituna"), ing("1 paprika, suikaloituna"),
@@ -372,7 +364,7 @@ const RECIPES = [
     ]
   },
   {
-    id: "lohikiusaus", selected: false,
+    id: "lohikiusaus",
     name: "Lohikiusaus", meta: "5 annosta · n. 40 min",
     ingredients: [
       ing("400 g lohifileetä, kuutioituna", "lohifile"), ing("1 kg perunaa, tikkuina"),
@@ -388,7 +380,7 @@ const RECIPES = [
     ]
   },
   {
-    id: "pekonikana", selected: false,
+    id: "pekonikana",
     name: "Pekonikääretty broileri uunijuureksilla", meta: "5 annosta · n. 30 min",
     ingredients: [
       ing("5 kanan rintafileetä"), ing("10 viipaletta pekonia", "pekoni"),
@@ -404,29 +396,22 @@ const RECIPES = [
   }
 ];
 
-// ---- Rakenna reseptikortit ----
-const grid = document.getElementById("recipe-grid");
-RECIPES.forEach(r => {
-  const card = document.createElement("div");
-  card.className = "recipe-card" + (r.selected ? " is-selected" : "");
-  card.dataset.id = r.id;
+// ---- 5 iltaa, yksi resepti kukin. Oletusvalinnat + loput 5 vaihtoehtoina jokaisessa pudotusvalikossa. ----
+const SLOT_DAYS = ["Maanantai", "Tiistai", "Keskiviikko", "Torstai", "Perjantai"];
+const DEFAULT_IDS = ["makaronilaatikko", "tortillat", "kalapuikot", "lihapullat", "juureskeitto"];
+const RECIPES_BY_ID = Object.fromEntries(RECIPES.map(r => [r.id, r]));
+let slotState = [...DEFAULT_IDS]; // slotState[i] = valitun reseptin id illalle i
 
+const slotGrid = document.getElementById("slot-grid");
+
+function recipeCard(r) {
   const ingHtml = r.ingredients.map(i =>
     `<li${i.key ? ' class="new-ing"' : ''}>${i.text}</li>`
   ).join("");
   const stepHtml = r.steps.map(s => `<li>${s}</li>`).join("");
-
-  card.innerHTML = `
-    <div class="recipe-card-head">
-      <div>
-        <div class="recipe-name">${r.name}</div>
-        <div class="recipe-meta">${r.meta}</div>
-      </div>
-      <label class="recipe-toggle">
-        <input type="checkbox" class="recipe-select" data-id="${r.id}" ${r.selected ? "checked" : ""}>
-        mukana tällä viikolla
-      </label>
-    </div>
+  return `
+    <div class="recipe-name">${r.name}</div>
+    <div class="recipe-meta">${r.meta}</div>
     <div class="recipe-cols">
       <div>
         <h4>Ainekset (✨ = uusi tuote)</h4>
@@ -438,21 +423,41 @@ RECIPES.forEach(r => {
       </div>
     </div>
   `;
-  grid.appendChild(card);
-});
+}
 
-// ---- Live-päivitys ----
 function render() {
-  const boxes = [...document.querySelectorAll(".recipe-select")];
-  const selectedIds = boxes.filter(b => b.checked).map(b => b.dataset.id);
+  // 1) piirrä 5 iltaa: pudotusvalikko + valitun reseptin kortti
+  slotGrid.innerHTML = "";
+  slotState.forEach((selectedId, i) => {
+    const takenElsewhere = slotState.filter((_, j) => j !== i);
+    const options = RECIPES.filter(r => !takenElsewhere.includes(r.id));
 
-  document.querySelectorAll(".recipe-card").forEach(card => {
-    card.classList.toggle("is-selected", selectedIds.includes(card.dataset.id));
+    const slot = document.createElement("div");
+    slot.className = "slot";
+    const optionsHtml = options.map(r =>
+      `<option value="${r.id}"${r.id === selectedId ? " selected" : ""}>${r.name}</option>`
+    ).join("");
+    slot.innerHTML = `
+      <div class="slot-head">
+        <div class="slot-day">${SLOT_DAYS[i]}</div>
+        <select class="slot-select" data-slot="${i}">${optionsHtml}</select>
+      </div>
+      ${recipeCard(RECIPES_BY_ID[selectedId])}
+    `;
+    slotGrid.appendChild(slot);
   });
 
+  slotGrid.querySelectorAll(".slot-select").forEach(sel => {
+    sel.addEventListener("change", e => {
+      slotState[Number(e.target.dataset.slot)] = e.target.value;
+      render();
+    });
+  });
+
+  // 2) laske ostoslista + hinta-arvio valitun 5 illan perusteella
   const keys = new Set();
-  RECIPES.filter(r => selectedIds.includes(r.id)).forEach(r => {
-    r.ingredients.forEach(i => { if (i.key) keys.add(i.key); });
+  slotState.forEach(id => {
+    RECIPES_BY_ID[id].ingredients.forEach(i => { if (i.key) keys.add(i.key); });
   });
 
   const list = document.getElementById("dynamic-list");
@@ -481,11 +486,8 @@ function render() {
     targetEl.textContent = "tavoite 200–250 €";
     targetEl.classList.remove("warn");
   }
-
-  document.getElementById("recipe-count").textContent = selectedIds.length;
 }
 
-document.querySelectorAll(".recipe-select").forEach(b => b.addEventListener("change", render));
 render();
 </script>
 
