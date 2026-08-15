@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vincentin viikko – Viikko 34</title>
+<title>Oma viikko – Vincent – Viikko 34</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#f1f2ec; --surface:#ffffff; --border:#dfe2d6;
     --ink:#24261f; --ink-dim:#6f7365; --muted:#93978a;
     --accent:#2c5c48; --accent-tint:rgba(44,92,72,0.07);
+    --c1:#a8462e; --c1-tint:rgba(168,70,46,0.06);
     --c2:#2f5f78; --c2-tint:rgba(47,95,120,0.06);
+    --c3:#8a6d1f; --c3-tint:rgba(138,109,31,0.06);
+    --c4:#3d2c5c; --c4-tint:rgba(61,44,92,0.06);
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:var(--bg);color:var(--ink);font-family:'Fraunces',serif;font-size:16px;line-height:1.65;padding:2rem 1.5rem;max-width:920px;margin:0 auto;}
@@ -42,6 +45,7 @@
   .grp ul{list-style:none;}
   .timetable-full{margin-top:1rem;padding-top:0.7rem;border-top:1px solid var(--border);}
   .timetable-full .ttl{font-family:'DM Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
+  .timetable-full .tt-note{font-family:'DM Mono',monospace;font-size:0.6rem;color:var(--muted);margin-bottom:0.4rem;}
   .timetable-full .tt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
   .timetable-full table{border-collapse:collapse;width:100%;font-size:0.64rem;color:var(--ink-dim);}
   .timetable-full th,.timetable-full td{padding:0.25rem 0.4rem;text-align:center;border-bottom:1px solid var(--border);white-space:nowrap;}
@@ -51,8 +55,6 @@
   .timetable-full tr:last-child td{border-bottom:none;}
   .grp li{font-size:0.9rem;padding:0.3rem 0;line-height:1.55;}
   .grp li::before{content:"–";color:var(--muted);margin-right:0.5rem;}
-
-  .badge-new{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;background:var(--accent-tint);color:var(--accent);padding:0.15rem 0.45rem;border-radius:4px;margin-left:0.4rem;text-transform:uppercase;}
 
   footer{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--muted);line-height:1.8;}
 </style>
@@ -72,12 +74,12 @@
     <div class="child-name" style="color:var(--c2)"><span class="dot" style="background:var(--c2)"></span>Vincent</div>
     <div class="child-grid">
       <div class="card">
-        <div class="card-title">⚽🏀 Harrastukset</div>
-        <div class="event"><span class="when">Ma 15:00–17:00</span><span class="what">Jalkapallo: PPJ Laru 2016, Yhteistreenit<br><span class="where">Ruukinlahden tekonurmi, Lauttasaarentie 51, 00200 Helsinki</span></span></div>
-        <div class="event"><span class="when">Ti 18:30–20:00</span><span class="what">Koripallo: Pojat 2016, P16 treenit 1/2<br><span class="where">Crusellin peruskoulu, Santakatu 6, 00180 Helsinki</span></span></div>
-        <div class="event"><span class="when">Ke 15:30–17:00</span><span class="what">Jalkapallo: PPJ L16, ulkokauden treenit SINIVALKO<br><span class="where">Ruukinlahden tekonurmi, Lauttasaarentie 51, 00200 Helsinki</span></span></div>
-        <div class="event"><span class="when">To 16:00–17:45</span><span class="what">Koripallo: Pojat 2016, P16 treenit<br><span class="where">Lauttasaaren Yhteiskoulu 1, Isokaari 19, 00200 Helsinki</span></span></div>
-        <div class="event"><span class="when">Pe 14:45–15:45</span><span class="what">Koripallo: Espoo liikkuu-turnaus 21.–23.8.2026, sitova ilmoittautuminen<br><span class="where">Espoo</span></span></div>
+        <div class="card-title">🏅 Harrastukset</div>
+        <div class="event"><span class="when">Ma 15–17</span><span class="what">Jalkapallo — PPJ Laru 2016: PPJ L16 Yhteistreenit<br><span class="where">Ruukinlahden tekonurmi, Lauttasaarentie 51, 00200 Helsinki</span></span></div>
+        <div class="event"><span class="when">Ti 18:30–20</span><span class="what">Koripallo — Pojat 2016 joukkue: P16 treenit 1/2<br><span class="where">Crusellin peruskoulu, Santakatu 6, 00180 Helsinki</span></span></div>
+        <div class="event"><span class="when">Ke 15:30–17</span><span class="what">Jalkapallo — PPJ Laru 2016: PPJ L16 ulkokauden treenit SINIVALKO<br><span class="where">Ruukinlahden tekonurmi, Lauttasaarentie 51, 00200 Helsinki</span></span></div>
+        <div class="event"><span class="when">To 16–17:45</span><span class="what">Koripallo — Pojat 2016 joukkue: P16 treenit<br><span class="where">Lauttasaaren Yhteiskoulu 1, Isokaari 19, 00200 Helsinki</span></span></div>
+        <div class="event"><span class="when">Pe 14:45–15:45</span><span class="what">Koripallo — Pojat 2016 joukkue: Espoo liikkuu-turnaus 21.-23.8.2026 sitova ilmoittautuminen<br><span class="where">Espoo</span></span></div>
       </div>
       <div class="card">
         <div class="card-title">🎒 Koulu</div>
@@ -97,13 +99,14 @@
           <div class="grp-label">Muuta tällä viikolla</div>
           <ul>
             <li>Vecka 34: skoldagar enligt schema (schemat i ryggsäcken, kommer snart även till Wilma)</li>
-            <li>Utegymnastik (ti) — mjuka kläder enligt väder</li>
-            <li>Utrymnings- och inrymningsövning (ons) — ta med inneskor</li>
-            <li>Skolfreden utlyses (tors), temat "För gemenskap"</li>
+            <li>(tis) Utegymnastik — mjuka kläder enligt väder</li>
+            <li>(ons) Utrymnings- och inrymningsövning — ta med inneskor</li>
+            <li>(tors) Skolfreden utlyses, temat "För gemenskap"</li>
           </ul>
         </div>
         <div class="timetable-full">
-          <div class="ttl">🕐 Lukujärjestys (kiinteä) — skoldagens längd: Mån 8.15–14.00, Tis 8.15–13.00, Ons 9.00–14.00, Tors 8.15–13.00, Fre 9.00–13.00</div>
+          <div class="ttl">🕐 Lukujärjestys (kiinteä)</div>
+          <div class="tt-note">Skoldagens längd varierar dagligen: mån 8:15–14:00, tis 8:15–13:00, ons 9:00–14:00, tor 8:15–13:00, fre 9:00–13:00.</div>
           <div class="tt-scroll">
             <table>
               <tr><th>Tid</th><th>Mån</th><th>Tis</th><th>Ons</th><th>Tor</th><th>Fre</th></tr>
@@ -125,7 +128,7 @@
   </div>
 
   <footer>
-    Koostettu automaattisesti (mode=full) 15.8.2026 — myClub-kalenteri ICS:nä, viikkotiedote aiemmin tallennetusta tiedotteet/2026-08-17.json:sta.
+    Koostettu myClub-kalenterista ja viikkotiedotteesta. Lukujärjestys on kiinteää lukuvuositietoa.
   </footer>
 
 </body>

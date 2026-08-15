@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Edvinin viikko – Viikko 34</title>
+<title>Oma viikko – Edvin – Viikko 34</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -11,6 +11,9 @@
     --ink:#24261f; --ink-dim:#6f7365; --muted:#93978a;
     --accent:#2c5c48; --accent-tint:rgba(44,92,72,0.07);
     --c1:#a8462e; --c1-tint:rgba(168,70,46,0.06);
+    --c2:#2f5f78; --c2-tint:rgba(47,95,120,0.06);
+    --c3:#8a6d1f; --c3-tint:rgba(138,109,31,0.06);
+    --c4:#3d2c5c; --c4-tint:rgba(61,44,92,0.06);
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:var(--bg);color:var(--ink);font-family:'Fraunces',serif;font-size:16px;line-height:1.65;padding:2rem 1.5rem;max-width:920px;margin:0 auto;}
@@ -42,6 +45,7 @@
   .grp ul{list-style:none;}
   .timetable-full{margin-top:1rem;padding-top:0.7rem;border-top:1px solid var(--border);}
   .timetable-full .ttl{font-family:'DM Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
+  .timetable-full .tt-note{font-family:'DM Mono',monospace;font-size:0.6rem;color:var(--muted);margin-bottom:0.4rem;}
   .timetable-full .tt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
   .timetable-full table{border-collapse:collapse;width:100%;font-size:0.64rem;color:var(--ink-dim);}
   .timetable-full th,.timetable-full td{padding:0.25rem 0.4rem;text-align:center;border-bottom:1px solid var(--border);white-space:nowrap;}
@@ -51,8 +55,6 @@
   .timetable-full tr:last-child td{border-bottom:none;}
   .grp li{font-size:0.9rem;padding:0.3rem 0;line-height:1.55;}
   .grp li::before{content:"–";color:var(--muted);margin-right:0.5rem;}
-
-  .badge-new{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;background:var(--accent-tint);color:var(--accent);padding:0.15rem 0.45rem;border-radius:4px;margin-left:0.4rem;text-transform:uppercase;}
 
   footer{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--muted);line-height:1.8;}
 </style>
@@ -72,23 +74,24 @@
     <div class="child-name" style="color:var(--c1)"><span class="dot" style="background:var(--c1)"></span>Edvin</div>
     <div class="child-grid">
       <div class="card">
-        <div class="card-title">⚽🏀 Harrastukset</div>
-        <div class="event"><span class="when">Ma 15:30–17:00</span><span class="what">Jalkapallo: PPJ Laru 2014, Maanantai treenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä", Lahnalahdentie 4, 00200 Helsinki</span></span></div>
-        <div class="event"><span class="when">Ti 16:15–18:30</span><span class="what">Koripallo: Pojat U13, harjoitukset ulkona + sisällä<br><span class="where">Matinkylän urheiluhalli, Tynnyritie 2, 02230 Espoo</span></span></div>
-        <div class="event"><span class="when">Ke 15:45–17:30</span><span class="what">Koripallo: Pojat U13, pelkkä fysiikka ulkona + sisällä (judosali)<br><span class="where">Tapiolan urheiluhalli, Urheilupuistontie 2, 02200 Espoo</span></span></div>
-        <div class="event"><span class="when">To 18:15–20:15</span><span class="what">Koripallo: Pojat U13, harjoitukset ulkona ja sisällä<br><span class="where">Matinkylän urheiluhalli, Tynnyritie 2, 02230 Espoo</span></span></div>
-        <div class="event"><span class="when">Pe 15:00–18:30</span><span class="what">Koripallo: Espoo Liikkuu Tournament<br><span class="where">Esport Arena, Koivu-Mankkaantie 3, 02200 Espoo</span></span></div>
+        <div class="card-title">🏅 Harrastukset</div>
+        <div class="event"><span class="when">Ma 15:30–17</span><span class="what">Jalkapallo — PPJ Laru 2014: Maanantai treenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä", Lahnalahdentie 4, 00200 Helsinki</span></span></div>
+        <div class="event"><span class="when">Ti 16:15–18:30</span><span class="what">Koripallo — Pojat U13 (2014): Harjoitukset ulkona + sisällä<br><span class="where">Matinkylän urheiluhalli, Tynnyritie 2, 02230 Espoo</span></span></div>
+        <div class="event"><span class="when">Ke 15:45–17:30</span><span class="what">Koripallo — Pojat U13 (2014): Pelkkä fysiikka ulkona + sisällä (judosali)<br><span class="where">Tapiolan urheiluhalli, Urheilupuistontie 2, 02200 Espoo</span></span></div>
+        <div class="event"><span class="when">To 18:15–20:15</span><span class="what">Koripallo — Pojat U13 (2014): Harjoitukset ulkona ja sisällä<br><span class="where">Matinkylän urheiluhalli, Tynnyritie 2, 02230 Espoo</span></span></div>
+        <div class="event"><span class="when">Pe 15–18:30</span><span class="what">Koripallo — Pojat U13 (2014): Espoo Liikkuu Tournament<br><span class="where">Esport Arena, Koivu-Mankkaantie 3, 02200 Espoo</span></span></div>
       </div>
       <div class="card">
         <div class="card-title">🎒 Koulu</div>
         <div class="grp">
           <div class="grp-label">Muuta tällä viikolla</div>
           <ul>
-            <li>Nytt läsår/schema börjar — alla behöver en kalender eller ett läxhäfte för läxor, prov och avvikande program (ma)</li>
+            <li>(mån) Nytt läsår/schema börjar — alla behöver en kalender eller ett läxhäfte för läxor, prov och avvikande program.</li>
           </ul>
         </div>
         <div class="timetable-full">
           <div class="ttl">🕐 Lukujärjestys (kiinteä)</div>
+          <div class="tt-note">Mo = sannolikt Modersmål, Ma = Matematik, BK = Bildkonst, GY = Gymnastik, X = varierande/ej specificerat</div>
           <div class="tt-scroll">
             <table>
               <tr><th>Tid</th><th>Mån</th><th>Tis</th><th>Ons</th><th>Tor</th><th>Fre</th></tr>
@@ -112,7 +115,7 @@
   </div>
 
   <footer>
-    Koostettu automaattisesti (mode=full) 15.8.2026 — myClub-kalenteri ICS:nä, viikkotiedote aiemmin tallennetusta tiedotteet/2026-08-17.json:sta.
+    Koostettu myClub-kalenterista ja viikkotiedotteesta. Lukujärjestys on kiinteää lukuvuositietoa.
   </footer>
 
 </body>
