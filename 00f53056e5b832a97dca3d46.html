@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oma viikko – Edvin – Viikko 34</title>
+<title>Edvinin viikko – Viikko 34</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -21,13 +21,14 @@
   .masthead{border-bottom:3px solid var(--accent);padding-bottom:1.4rem;margin-bottom:1.8rem;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;}
   h1{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--ink);line-height:1;letter-spacing:-0.02em;}
   .date-range{font-family:'DM Mono',monospace;font-size:0.85rem;color:var(--ink-dim);margin-top:0.5rem;}
+  .source-note{font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:right;line-height:1.6;}
 
   .child{margin-bottom:2.4rem;border-left:3px solid var(--line-color,var(--border));padding-left:1.4rem;}
   .child-name{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:1rem;display:flex;align-items:center;gap:0.55rem;}
   .dot{width:0.6rem;height:0.6rem;border-radius:50%;display:inline-block;}
   .child-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:1.2rem;}
   .child-grid.single{grid-template-columns:1fr;}
-  @media(max-width:680px){.child-grid{grid-template-columns:1fr;} .masthead{align-items:flex-start;}}
+  @media(max-width:680px){.child-grid{grid-template-columns:1fr;} .masthead{align-items:flex-start;} .source-note{text-align:left;}}
 
   .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.3rem 1.4rem;min-width:0;}
   .card-title{font-family:'DM Mono',monospace;font-size:0.66rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:0.9rem;}
@@ -55,6 +56,7 @@
   .grp li::before{content:"–";color:var(--muted);margin-right:0.5rem;}
 
   .badge-new{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;background:var(--accent-tint);color:var(--accent);padding:0.15rem 0.45rem;border-radius:4px;margin-left:0.4rem;text-transform:uppercase;}
+  .badge-koe{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;background:var(--c1-tint);color:var(--c1);padding:0.15rem 0.45rem;border-radius:4px;margin-right:0.5rem;text-transform:uppercase;}
 
   footer{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--muted);line-height:1.8;}
 </style>
@@ -74,19 +76,19 @@
     <div class="child-name" style="color:var(--c1)"><span class="dot" style="background:var(--c1)"></span>Edvin</div>
     <div class="child-grid">
       <div class="card">
-        <div class="card-title">🏃 Harrastukset</div>
-        <div class="event"><span class="when">Ma 15.30–17</span><span class="what">Jalkapallo — Maanantai-treenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä"</span></span></div>
-        <div class="event"><span class="when">Ti 16.15–18.30</span><span class="what">Koripallo — Harjoitukset ulkona + sisällä<br><span class="where">Matinkylän urheiluhalli</span></span></div>
-        <div class="event"><span class="when">Ke 15.45–17.30</span><span class="what">Koripallo — Fysiikkaharjoitus ulkona + sisällä (judosali)<br><span class="where">Tapiolan urheiluhalli</span></span></div>
-        <div class="event"><span class="when">To 18.15–20.15</span><span class="what">Koripallo — Harjoitukset ulkona ja sisällä<br><span class="where">Matinkylän urheiluhalli</span></span></div>
-        <div class="event"><span class="when">Pe 15–18.30</span><span class="what">Koripallo — Espoo Liikkuu -turnaus<br><span class="where">Esport Arena</span></span></div>
+        <div class="card-title">🏀⚽ Harrastukset</div>
+        <div class="event"><span class="when">Ma 15.30–17</span><span class="what">Jalkapallo — PPJ Laru 2014: Maanantai treenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä"</span></span></div>
+        <div class="event"><span class="when">Ti 16.15–18.30</span><span class="what">Koripallo — Pojat U13 (2014): Harjoitukset ulkona + sisällä<br><span class="where">Matinkylän urheiluhalli</span></span></div>
+        <div class="event"><span class="when">Ke 15.30–17</span><span class="what">Jalkapallo — PPJ Laru 2014: Keskiviikko treenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä"</span></span></div>
+        <div class="event"><span class="when">To 18.15–20.15</span><span class="what">Koripallo — Pojat U13 (2014): Harjoitukset ulkona ja sisällä<br><span class="where">Matinkylän urheiluhalli</span></span></div>
+        <div class="event"><span class="when">Pe 15–18.30</span><span class="what">Koripallo — Espoo Liikkuu Tournament<br><span class="where">Esport Arena, Espoo</span></span></div>
       </div>
       <div class="card">
         <div class="card-title">🎒 Koulu</div>
         <div class="grp">
           <div class="grp-label">Muuta tällä viikolla</div>
           <ul>
-            <li>Ma: Uusi lukuvuosi/lukujärjestys alkaa — kaikki tarvitsevat kalenterin tai läksyvihon läksyjä, kokeita ja poikkeavaa ohjelmaa varten.</li>
+            <li>Nytt läsår/schema börjar måndag — alla behöver en kalender eller ett läxhäfte för läxor, prov och avvikande program</li>
           </ul>
         </div>
         <div class="timetable-full">
@@ -113,8 +115,21 @@
     </div>
   </div>
 
+  <!-- TULOSSA -->
+  <div class="child" style="--line-color:var(--c1)">
+    <div class="child-grid single">
+      <div class="card">
+        <div class="card-title">🗓️ Tulossa</div>
+        <div class="event"><span class="when">2.9.</span><span class="what">Fotografering</span></div>
+        <div class="event"><span class="when">8.9.</span><span class="what">Föräldramöte kl. 17.15–18.30</span></div>
+        <div class="event"><span class="when">17.9.</span><span class="what">Idrottskarusellen</span></div>
+      </div>
+    </div>
+  </div>
+
   <footer>
-    Oma viikko myClubista ja Wilmasta. Viikko 34 · 2026-08-17 – 2026-08-23
+    Koostettu automaattisesti myClubista sekä viikon Wilma-tiedotteesta.<br>
+    Päivitetty: 2026-08-16
   </footer>
 
 </body>
