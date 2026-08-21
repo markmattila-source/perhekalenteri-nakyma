@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Edvinin viikko – Viikko 34</title>
+<title>Edvinin viikko – Viikko 35</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -43,6 +43,7 @@
   .grp:last-child{margin-bottom:0;}
   .grp-label{font-family:'DM Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
   .grp ul{list-style:none;}
+  .grp .note{font-size:0.86rem;color:var(--ink-dim);font-style:italic;}
   .timetable-full{margin-top:1rem;padding-top:0.7rem;border-top:1px solid var(--border);}
   .timetable-full .ttl{font-family:'DM Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
   .timetable-full .tt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
@@ -67,29 +68,27 @@
     <div>
       <div class="eyebrow">Oma viikko</div>
       <h1>Edvin</h1>
-      <div class="date-range">Ma 17.8. – Su 23.8.2026</div>
+      <div class="date-range">Ma 24.8. – Su 30.8.2026</div>
     </div>
   </div>
 
-  <!-- EDVIN -->
+  <!-- EDVIN (identical markup to the family dashboard's Edvin block) -->
   <div class="child" style="--line-color:var(--c1)">
     <div class="child-name" style="color:var(--c1)"><span class="dot" style="background:var(--c1)"></span>Edvin</div>
     <div class="child-grid">
       <div class="card">
-        <div class="card-title">🏀⚽ Harrastukset</div>
-        <div class="event"><span class="when">Ma 15.30–17</span><span class="what">Jalkapallo, Maanantai treenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä"</span></span></div>
-        <div class="event"><span class="when">Ti 16.15–18.30</span><span class="what">Koripallo, harjoitukset ulkona + sisällä<br><span class="where">Matinkylän urheiluhalli</span></span></div>
-        <div class="event"><span class="when">Ke 15.30–17</span><span class="what">Jalkapallo, Keskiviikko treenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä"</span></span></div>
-        <div class="event"><span class="when">To 18.15–20.15</span><span class="what">Koripallo, harjoitukset ulkona ja sisällä<br><span class="where">Matinkylän urheiluhalli</span></span></div>
-        <div class="event"><span class="when">Pe 15–18.30</span><span class="what">Koripallo, Espoo Liikkuu Tournament<br><span class="where">Esport Arena, Espoo</span></span></div>
+        <div class="card-title">⚽🏀 Harrastukset</div>
+        <div class="event"><span class="when">Ma 15:30–17</span><span class="what">Jalkapallo, treenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä"</span></span></div>
+        <div class="event"><span class="when">Ti 16:45–18:30</span><span class="what">Koripallo, harjoitukset (Ryhmä Green)<br><span class="where">Pohjois-Tapiolan koulu</span></span></div>
+        <div class="event"><span class="when">Ke 15:30–17</span><span class="what">Jalkapallo, treenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä"</span></span></div>
+        <div class="event"><span class="when">To 17:45–19:45</span><span class="what">Koripallo, harjoitukset (kaikille)<br><span class="where">Matinkylän urheiluhalli</span></span></div>
+        <div class="event"><span class="when">Pe 16–18</span><span class="what">Koripallo, harjoitukset (4x/vko treenaaville)<br><span class="where">Honkahalli</span></span></div>
+        <div class="event"><span class="when">La 13:15–16</span><span class="what">Jalkapallo, Piirisarja – Valkoinen<br><span class="where">Kannelmäki TN B</span></span></div>
       </div>
       <div class="card">
         <div class="card-title">🎒 Koulu</div>
         <div class="grp">
-          <div class="grp-label">Muuta tällä viikolla</div>
-          <ul>
-            <li>Nytt läsår/schema börjar ma — alla behöver en kalender eller ett läxhäfte för läxor, prov och avvikande program</li>
-          </ul>
+          <p class="note">Ei vielä viikkotiedotetta saatavilla tälle viikolle.</p>
         </div>
         <div class="timetable-full">
           <div class="ttl">🕐 Lukujärjestys (kiinteä)</div>
@@ -115,7 +114,7 @@
     </div>
   </div>
 
-  <!-- EDVIN "TULOSSA" -->
+  <!-- TULOSSA (step 5b) -->
   <div class="child" style="--line-color:var(--c1)">
     <div class="child-grid single">
       <div class="card">
@@ -128,8 +127,8 @@
   </div>
 
   <footer>
-    Koostettu myClub-kalenterista (ICS) sekä viikon Wilma-tiedotteesta.<br>
-    Päivitetty automaattisesti (mode=refresh) — voi sisältää viikon aikana tehtyjä muutoksia myClubissa.
+    Koostettu automaattisesti (mode=refresh) myClub-kalenterista (ICS). Viikkotiedotetta ei ollut vielä saatavilla tälle viikolle ajon hetkellä.<br>
+    Generoitu: 2026-08-21.
   </footer>
 
 </body>
