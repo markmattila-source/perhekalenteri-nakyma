@@ -3,22 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vincentin viikko – Viikko 35</title>
+<title>Oma viikko – Vincent – Viikko 35</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#f1f2ec; --surface:#ffffff; --border:#dfe2d6;
     --ink:#24261f; --ink-dim:#6f7365; --muted:#93978a;
     --accent:#2c5c48; --accent-tint:rgba(44,92,72,0.07);
-    --c1:#a8462e; --c1-tint:rgba(168,70,46,0.06);
     --c2:#2f5f78; --c2-tint:rgba(47,95,120,0.06);
-    --c3:#8a6d1f; --c3-tint:rgba(138,109,31,0.06);
-    --c4:#3d2c5c; --c4-tint:rgba(61,44,92,0.06);
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:var(--bg);color:var(--ink);font-family:'Fraunces',serif;font-size:16px;line-height:1.65;padding:2rem 1.5rem;max-width:920px;margin:0 auto;}
   .eyebrow{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.22em;color:var(--muted);text-transform:uppercase;margin-bottom:0.5rem;}
-  .masthead{border-bottom:3px solid var(--accent);padding-bottom:1.4rem;margin-bottom:1.8rem;}
+  .masthead{border-bottom:3px solid var(--accent);padding-bottom:1.4rem;margin-bottom:1.8rem;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;}
   h1{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--ink);line-height:1;letter-spacing:-0.02em;}
   .date-range{font-family:'DM Mono',monospace;font-size:0.85rem;color:var(--ink-dim);margin-top:0.5rem;}
 
@@ -42,7 +39,6 @@
   .grp:last-child{margin-bottom:0;}
   .grp-label{font-family:'DM Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
   .grp ul{list-style:none;}
-  .grp .note{font-size:0.85rem;color:var(--muted);font-style:italic;}
   .timetable-full{margin-top:1rem;padding-top:0.7rem;border-top:1px solid var(--border);}
   .timetable-full .ttl{font-family:'DM Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
   .timetable-full .tt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
@@ -55,9 +51,7 @@
   .grp li{font-size:0.9rem;padding:0.3rem 0;line-height:1.55;}
   .grp li::before{content:"–";color:var(--muted);margin-right:0.5rem;}
 
-  .badge-new{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;background:var(--accent-tint);color:var(--accent);padding:0.15rem 0.45rem;border-radius:4px;margin-left:0.4rem;text-transform:uppercase;}
-  .badge-koe{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;background:var(--c1-tint);color:var(--c1);padding:0.15rem 0.45rem;border-radius:4px;margin-right:0.5rem;text-transform:uppercase;}
-  .cancelled{color:var(--c1);font-weight:700;}
+  .badge-koe{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;background:var(--c2-tint);color:var(--c2);padding:0.15rem 0.45rem;border-radius:4px;margin-right:0.5rem;text-transform:uppercase;}
 
   footer{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--muted);line-height:1.8;}
 </style>
@@ -65,9 +59,11 @@
 <body>
 
   <div class="masthead">
-    <div class="eyebrow">Oma viikko</div>
-    <h1>Vincent</h1>
-    <div class="date-range">Ma 24.8. – Su 30.8.2026</div>
+    <div>
+      <div class="eyebrow">Oma viikko</div>
+      <h1>Vincent</h1>
+      <div class="date-range">Ma 24.8. – Su 30.8.2026</div>
+    </div>
   </div>
 
   <!-- VINCENT — reused verbatim from perheen-viikko-2026-08-24.html -->
@@ -76,20 +72,35 @@
     <div class="child-grid">
       <div class="card">
         <div class="card-title">🏀⚽ Harrastukset</div>
-        <div class="event"><span class="when">Ma 15–17</span><span class="what">Jalkapallo, yhteistreenit<br><span class="where">Ruukinlahden tekonurmi, Lauttasaarentie 51, 00200 Helsinki</span></span></div>
-        <div class="event"><span class="when">Ti 18.30–20</span><span class="what">Koripallo, P16 treenit 1/2<br><span class="where">Crusellin peruskoulu, Santakatu 6, 00180 Helsinki</span></span></div>
-        <div class="event"><span class="when">Ke 15.30–17</span><span class="what">Jalkapallo, ulkokauden treenit SINIVALKO<br><span class="where">Ruukinlahden tekonurmi, Lauttasaarentie 51, 00200 Helsinki</span></span></div>
-        <div class="event"><span class="when">To 15.30–17</span><span class="what">Jalkapallo, Taitokoulu-harjoitus<br><span class="where">Intersport Areena / Jätkäsaaren kuplahalli, Hyväntoivonkatu 1, 00220 Helsinki</span></span></div>
-        <div class="event"><span class="when">Pe 16:00 →</span><span class="what">Koripallo, leiriviikonloppu 28.–30.8.<br><span class="where">Kisakallion kampus, Kaarina Karin tie 4, 08360 Lohja</span></span></div>
+        <div class="event"><span class="when">Ma 15–17</span><span class="what">Jalkapallo, yhteistreenit<br><span class="where">Ruukinlahden tekonurmi</span></span></div>
+        <div class="event"><span class="when">Ti 18:30–20</span><span class="what">Koripallo, treenit 1/2<br><span class="where">Crusellin peruskoulu</span></span></div>
+        <div class="event"><span class="when">Ke 15:30–17</span><span class="what">Jalkapallo, ulkokauden treenit (Sinivalko)<br><span class="where">Ruukinlahden tekonurmi</span></span></div>
+        <div class="event"><span class="when">To 15:30–17</span><span class="what">Jalkapallo, Taitokoulu-harjoitus<br><span class="where">Intersport Areena / Jätkäsaaren kuplahalli</span></span></div>
+        <div class="event"><span class="when">Pe 16:00–</span><span class="what">Koripallon leiriviikonloppu (28.–30.8.)<br><span class="where">Kisakallion kampus, Lohja</span></span></div>
       </div>
       <div class="card">
         <div class="card-title">🎒 Koulu</div>
         <div class="grp">
-          <div class="grp-label">Viikkotiedote</div>
-          <div class="note">Ei ole vielä saapunut/tallennettu tälle viikolle.</div>
+          <div class="grp-label">Läksyt</div>
+          <ul>
+            <li>Matematik: tabelltest (nivå 1–5, igen) + räknesättens ordningsföljd kap. 5–7</li>
+            <li>Engelska: chapter 1</li>
+            <li>Modersmål: skrivskoj, högläsning, medskapande läsning ("Sandvargen"), Språkresan s. 51–53 (lång & kort vokal)</li>
+            <li>Omgivningslära: kap. 2 (ryggradslösa djur) + intro kap. 3 Vattenväxternas rike</li>
+            <li>Bildkonst: självporträtt (forts.)</li>
+            <li>Slöjd: teknisk slöjd (LA-gruppen)</li>
+          </ul>
+        </div>
+        <div class="grp">
+          <div class="grp-label">Muuta tällä viikolla</div>
+          <ul>
+            <li>Ti: utegymnastik, friidrott (LA-gruppen)</li>
+            <li>Pe: mofi-sanakoe, kap. 1 & 2</li>
+            <li>Fotolappu (koulukuvaus 2.9.) palautettava tällä viikolla — repussa</li>
+          </ul>
         </div>
         <div class="timetable-full">
-          <div class="ttl">🕐 Lukujärjestys (kiinteä) — 4LA</div>
+          <div class="ttl">🕐 Lukujärjestys (kiinteä)</div>
           <div class="tt-scroll">
             <table>
               <tr><th>Tid</th><th>Mån</th><th>Tis</th><th>Ons</th><th>Tor</th><th>Fre</th></tr>
@@ -110,21 +121,21 @@
     </div>
   </div>
 
-  <!-- TULOSSA (step 5b) -->
+  <!-- TULOSSA — collected across all tiedotteet/*.json, dedup by later received_at, filtered to future dates -->
   <div class="child" style="--line-color:var(--c2)">
     <div class="child-grid single">
       <div class="card">
         <div class="card-title">🗓️ Tulossa</div>
         <div class="event"><span class="when">2.9.</span><span class="what">Skolfotografering</span></div>
-        <div class="event"><span class="when">8.9.</span><span class="what">Föräldramöte</span></div>
+        <div class="event"><span class="when">2.9.</span><span class="what"><span class="badge-koe">koe</span>OL: artkännedomstest — 8 ryggradslösa djur som lever i vattnet</span></div>
+        <div class="event"><span class="when">8.9.</span><span class="what">Föräldramöte kl. 16.30–17:45</span></div>
         <div class="event"><span class="when">25.9.</span><span class="what">HoS-dagen, gemensam frukost</span></div>
       </div>
     </div>
   </div>
 
   <footer>
-    Koostettu automaattisesti myClubista. Viikkotiedotetta ei ollut tallennettuna tälle viikolle.<br>
-    Generoitu 2026-08-22.
+    Vincentin oma viikko · sama sisältö kuin perheen dashboardin Vincent-osiossa.
   </footer>
 
 </body>
