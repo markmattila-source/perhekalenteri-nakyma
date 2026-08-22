@@ -18,17 +18,16 @@
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:var(--bg);color:var(--ink);font-family:'Fraunces',serif;font-size:16px;line-height:1.65;padding:2rem 1.5rem;max-width:920px;margin:0 auto;}
   .eyebrow{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.22em;color:var(--muted);text-transform:uppercase;margin-bottom:0.5rem;}
-  .masthead{border-bottom:3px solid var(--accent);padding-bottom:1.4rem;margin-bottom:1.8rem;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;}
+  .masthead{border-bottom:3px solid var(--accent);padding-bottom:1.4rem;margin-bottom:1.8rem;}
   h1{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--ink);line-height:1;letter-spacing:-0.02em;}
   .date-range{font-family:'DM Mono',monospace;font-size:0.85rem;color:var(--ink-dim);margin-top:0.5rem;}
-  .source-note{font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:right;line-height:1.6;}
 
   .child{margin-bottom:2.4rem;border-left:3px solid var(--line-color,var(--border));padding-left:1.4rem;}
   .child-name{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:1rem;display:flex;align-items:center;gap:0.55rem;}
   .dot{width:0.6rem;height:0.6rem;border-radius:50%;display:inline-block;}
   .child-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:1.2rem;}
   .child-grid.single{grid-template-columns:1fr;}
-  @media(max-width:680px){.child-grid{grid-template-columns:1fr;} .masthead{align-items:flex-start;} .source-note{text-align:left;}}
+  @media(max-width:680px){.child-grid{grid-template-columns:1fr;} .masthead{align-items:flex-start;}}
 
   .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.3rem 1.4rem;min-width:0;}
   .card-title{font-family:'DM Mono',monospace;font-size:0.66rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:0.9rem;}
@@ -43,7 +42,7 @@
   .grp:last-child{margin-bottom:0;}
   .grp-label{font-family:'DM Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
   .grp ul{list-style:none;}
-  .grp .note{font-size:0.86rem;color:var(--ink-dim);font-style:italic;}
+  .grp .note{font-size:0.85rem;color:var(--muted);font-style:italic;}
   .timetable-full{margin-top:1rem;padding-top:0.7rem;border-top:1px solid var(--border);}
   .timetable-full .ttl{font-family:'DM Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
   .timetable-full .tt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
@@ -58,6 +57,7 @@
 
   .badge-new{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;background:var(--accent-tint);color:var(--accent);padding:0.15rem 0.45rem;border-radius:4px;margin-left:0.4rem;text-transform:uppercase;}
   .badge-koe{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;background:var(--c1-tint);color:var(--c1);padding:0.15rem 0.45rem;border-radius:4px;margin-right:0.5rem;text-transform:uppercase;}
+  .cancelled{color:var(--c1);font-weight:700;}
 
   footer{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--muted);line-height:1.8;}
 </style>
@@ -65,33 +65,32 @@
 <body>
 
   <div class="masthead">
-    <div>
-      <div class="eyebrow">Oma viikko</div>
-      <h1>Edvin</h1>
-      <div class="date-range">Ma 24.8. – Su 30.8.2026</div>
-    </div>
+    <div class="eyebrow">Oma viikko</div>
+    <h1>Edvin</h1>
+    <div class="date-range">Ma 24.8. – Su 30.8.2026</div>
   </div>
 
-  <!-- EDVIN (identical markup to the family dashboard's Edvin block) -->
+  <!-- EDVIN — reused verbatim from perheen-viikko-2026-08-24.html -->
   <div class="child" style="--line-color:var(--c1)">
     <div class="child-name" style="color:var(--c1)"><span class="dot" style="background:var(--c1)"></span>Edvin</div>
     <div class="child-grid">
       <div class="card">
-        <div class="card-title">⚽🏀 Harrastukset</div>
-        <div class="event"><span class="when">Ma 15:30–17</span><span class="what">Jalkapallo, treenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä"</span></span></div>
-        <div class="event"><span class="when">Ti 16:45–18:30</span><span class="what">Koripallo, harjoitukset (Ryhmä Green)<br><span class="where">Pohjois-Tapiolan koulu</span></span></div>
-        <div class="event"><span class="when">Ke 15:30–17</span><span class="what">Jalkapallo, treenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä"</span></span></div>
-        <div class="event"><span class="when">To 17:45–19:45</span><span class="what">Koripallo, harjoitukset (kaikille)<br><span class="where">Matinkylän urheiluhalli</span></span></div>
-        <div class="event"><span class="when">Pe 16–18</span><span class="what">Koripallo, harjoitukset (4x/vko treenaaville)<br><span class="where">Honkahalli</span></span></div>
-        <div class="event"><span class="when">La 13:15–16</span><span class="what">Jalkapallo, Piirisarja – Valkoinen<br><span class="where">Kannelmäki TN B</span></span></div>
+        <div class="card-title">🏀⚽ Harrastukset</div>
+        <div class="event"><span class="when">Ma 15.30–17</span><span class="what">Jalkapallo, maanantaitreenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä"</span></span></div>
+        <div class="event"><span class="when">Ti 16.45–18.30</span><span class="what">Koripallo, harjoitukset (Ryhmä Green)<br><span class="where">Pohjois-Tapiolan koulu</span></span></div>
+        <div class="event"><span class="when">Ke 15.30–17</span><span class="what">Jalkapallo, keskiviikkotreenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä"</span></span></div>
+        <div class="event"><span class="when">To 17.45–19.45</span><span class="what"><span class="cancelled">PERUTTU</span> — Koripallo, harjoitukset kaikille (FIN–SWE-ottelu)<br><span class="where">Matinkylän urheiluhalli, Tynnyritie 2, 02230 Espoo</span></span></div>
+        <div class="event"><span class="when">Pe 16–18</span><span class="what">Koripallo, harjoitukset (4x/vko treenaaville)<br><span class="where">Honkahalli, Urheilupuistontie 2, 02200 Espoo</span></span></div>
+        <div class="event"><span class="when">La 13.15–16</span><span class="what">Jalkapallo, ottelu — Piirisarja Valkoinen<br><span class="where">Kannelmäki TN B, Soittajantie 11, Helsinki</span></span></div>
       </div>
       <div class="card">
         <div class="card-title">🎒 Koulu</div>
         <div class="grp">
-          <p class="note">Ei vielä viikkotiedotetta saatavilla tälle viikolle.</p>
+          <div class="grp-label">Viikkotiedote</div>
+          <div class="note">Ei ole vielä saapunut/tallennettu tälle viikolle.</div>
         </div>
         <div class="timetable-full">
-          <div class="ttl">🕐 Lukujärjestys (kiinteä)</div>
+          <div class="ttl">🕐 Lukujärjestys (kiinteä) — 6VV</div>
           <div class="tt-scroll">
             <table>
               <tr><th>Tid</th><th>Mån</th><th>Tis</th><th>Ons</th><th>Tor</th><th>Fre</th></tr>
@@ -127,8 +126,8 @@
   </div>
 
   <footer>
-    Koostettu automaattisesti (mode=refresh) myClub-kalenterista (ICS). Viikkotiedotetta ei ollut vielä saatavilla tälle viikolle ajon hetkellä.<br>
-    Generoitu: 2026-08-21.
+    Koostettu automaattisesti myClubista. Viikkotiedotetta ei ollut tallennettuna tälle viikolle.<br>
+    Generoitu 2026-08-22.
   </footer>
 
 </body>
