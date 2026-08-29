@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Edvinin viikko – Viikko 36</title>
+<title>Oma viikko – Edvin – Viikko 36</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -36,14 +36,13 @@
   .event{display:flex;gap:0.85rem;padding:0.55rem 0;border-bottom:1px solid var(--border);align-items:baseline;}
   .event:last-child{border-bottom:none;}
   .event .when{font-family:'DM Mono',monospace;font-size:0.76rem;color:var(--ink-dim);white-space:nowrap;min-width:5.6rem;}
-  .event .what{font-size:0.92rem;min-width:0;overflow-wrap:break-word;}
+  .event .what{font-size:0.92rem;}
   .event .where{color:var(--ink-dim);font-size:0.86rem;}
 
   .grp{margin-bottom:1rem;}
   .grp:last-child{margin-bottom:0;}
   .grp-label{font-family:'DM Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
   .grp ul{list-style:none;}
-  .grp-note{font-size:0.86rem;color:var(--ink-dim);font-style:italic;}
   .timetable-full{margin-top:1rem;padding-top:0.7rem;border-top:1px solid var(--border);}
   .timetable-full .ttl{font-family:'DM Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
   .timetable-full .tt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
@@ -52,7 +51,6 @@
   .timetable-full th{font-family:'DM Mono',monospace;font-weight:500;color:var(--muted);text-transform:uppercase;font-size:0.58rem;}
   .timetable-full td:first-child,.timetable-full th:first-child{text-align:left;color:var(--muted);font-family:'DM Mono',monospace;position:sticky;left:0;background:var(--surface);z-index:1;box-shadow:1px 0 0 var(--border);}
   .timetable-full tr.tt-break td{color:var(--muted);opacity:0.6;font-style:italic;}
-  .timetable-full tr.tt-break td[colspan]{text-align:left;padding-left:0.6rem;}
   .timetable-full tr:last-child td{border-bottom:none;}
   .grp li{font-size:0.9rem;padding:0.3rem 0;line-height:1.55;}
   .grp li::before{content:"–";color:var(--muted);margin-right:0.5rem;}
@@ -73,20 +71,28 @@
     </div>
   </div>
 
-  <!-- EDVIN -->
+  <!-- EDVIN (identical .child block to the family dashboard) -->
   <div class="child" style="--line-color:var(--c1)">
     <div class="child-name" style="color:var(--c1)"><span class="dot" style="background:var(--c1)"></span>Edvin</div>
     <div class="child-grid">
       <div class="card">
-        <div class="card-title">⚽🏀 Harrastukset</div>
-        <div class="event"><span class="when">Ma 17.15–20</span><span class="what">Jalkapallo-ottelu (Piirisarja, Valkoinen)<br><span class="where">Tapanila TN B, Moisiontie 5, Helsinki</span></span></div>
-        <div class="event"><span class="when">Ti 16.45–18.30</span><span class="what">Koripalloharjoitukset (Ryhmä Green)<br><span class="where">Pohjois-Tapiolan koulu</span></span></div>
-        <div class="event"><span class="when">La 8–20</span><span class="what">Jalkapallon syysturnaus<br><span class="where">Espoo</span></span></div>
+        <div class="card-title">🏀 Harrastukset</div>
+        <div class="event"><span class="when">Ti 16:45–18:30</span><span class="what">Koripallo, Harjoitukset Ryhmä Green<br><span class="where">Pohjois-Tapiolan koulu</span></span></div>
+        <div class="event"><span class="when">To 19:15–20:15</span><span class="what">Koripallo, Ulkoharjoitus<br><span class="where">Matinkylän urheiluhalli, Tynnyritie 2, Espoo</span></span></div>
+        <div class="event"><span class="when">Ma 17:15–20:00</span><span class="what">Jalkapallo, Piirisarja – Valkoinen<br><span class="where">Tapanila TN B, Helsinki</span></span></div>
+        <div class="event"><span class="when">Ke 15:30–17:00</span><span class="what">Jalkapallo, keskiviikkotreenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä"</span></span></div>
+        <div class="event"><span class="when">La 08:00–20:00</span><span class="what">Jalkapallo, Syysturnaus (valkoiset/mustat/oranssit)<br><span class="where">Espoo</span></span></div>
       </div>
       <div class="card">
         <div class="card-title">🎒 Koulu</div>
         <div class="grp">
-          <div class="grp-note">Wilma-tiedote ei ole vielä saapunut tälle viikolle.</div>
+          <div class="grp-label">Muuta tällä viikolla</div>
+          <ul>
+            <li>Skolmästerskap i friidrott på Djurgården (särskild info till deltagare) — ti</li>
+            <li>Fotografering — returnera fotoblanketten snarast om inte redan gjort (inga syskon- eller kompisfoton) — ke</li>
+            <li>Artkännedomstest: svampar — ke</li>
+            <li>Engelska ordförhör — pe</li>
+          </ul>
         </div>
         <div class="timetable-full">
           <div class="ttl">🕐 Lukujärjestys (kiinteä)</div>
@@ -112,13 +118,11 @@
     </div>
   </div>
 
-  <!-- EDVIN'S "TULOSSA" -->
+  <!-- EDVIN'S "TULOSSA" — not on family dashboard, own page only -->
   <div class="child" style="--line-color:var(--c1)">
     <div class="child-grid single">
       <div class="card">
         <div class="card-title">🗓️ Tulossa</div>
-        <div class="event"><span class="when">1.9.</span><span class="what">Skolmästerskap i friidrott på Djurgården (särskild info till deltagare)</span></div>
-        <div class="event"><span class="when">2.9.</span><span class="what">Fotografering (inga syskon- eller kompisfoton)</span></div>
         <div class="event"><span class="when">8.9.</span><span class="what">Föräldramöte kl. 17.15–18.30</span></div>
         <div class="event"><span class="when">10.9.</span><span class="what">Utfärd till Räfsö, skoldag kl. 8.15–ca 15.30</span></div>
         <div class="event"><span class="when">17.9.</span><span class="what">Idrottskarusellen</span></div>
@@ -127,8 +131,7 @@
   </div>
 
   <footer>
-    Koostettu automaattisesti (mode=full) myClub-kalenterista ICS:nä. Wilma-tiedote ei ollut vielä saapunut tälle viikolle ajon hetkellä.<br>
-    Generoitu: 29.8.2026.
+    Koostettu automaattisesti (myClub + Wilman viikkotiedote) — mode=refresh, 29.8.2026.
   </footer>
 
 </body>

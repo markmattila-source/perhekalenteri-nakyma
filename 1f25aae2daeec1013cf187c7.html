@@ -45,14 +45,13 @@
   .event{display:flex;gap:0.85rem;padding:0.55rem 0;border-bottom:1px solid var(--border);align-items:baseline;}
   .event:last-child{border-bottom:none;}
   .event .when{font-family:'DM Mono',monospace;font-size:0.76rem;color:var(--ink-dim);white-space:nowrap;min-width:5.6rem;}
-  .event .what{font-size:0.92rem;min-width:0;overflow-wrap:break-word;}
+  .event .what{font-size:0.92rem;}
   .event .where{color:var(--ink-dim);font-size:0.86rem;}
 
   .grp{margin-bottom:1rem;}
   .grp:last-child{margin-bottom:0;}
   .grp-label{font-family:'DM Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
   .grp ul{list-style:none;}
-  .grp-note{font-size:0.86rem;color:var(--ink-dim);font-style:italic;}
   .timetable-full{margin-top:1rem;padding-top:0.7rem;border-top:1px solid var(--border);}
   .timetable-full .ttl{font-family:'DM Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
   .timetable-full .tt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
@@ -61,7 +60,6 @@
   .timetable-full th{font-family:'DM Mono',monospace;font-weight:500;color:var(--muted);text-transform:uppercase;font-size:0.58rem;}
   .timetable-full td:first-child,.timetable-full th:first-child{text-align:left;color:var(--muted);font-family:'DM Mono',monospace;position:sticky;left:0;background:var(--surface);z-index:1;box-shadow:1px 0 0 var(--border);}
   .timetable-full tr.tt-break td{color:var(--muted);opacity:0.6;font-style:italic;}
-  .timetable-full tr.tt-break td[colspan]{text-align:left;padding-left:0.6rem;}
   .timetable-full tr:last-child td{border-bottom:none;}
   .grp li{font-size:0.9rem;padding:0.3rem 0;line-height:1.55;}
   .grp li::before{content:"–";color:var(--muted);margin-right:0.5rem;}
@@ -87,27 +85,31 @@
     <div class="summary-title">📌 Tällä viikolla huomioitavaa</div>
     <div class="summary-day">
       <div class="d">Maanantai</div>
-      <div class="items"><span class="who" style="color:var(--c2)">Vincent</span> — jalkapallo, yhteistreenit 15–17 (Ruukinlahden tekonurmi) · <span class="who" style="color:var(--c1)">Edvin</span> — jalkapallo-ottelu 17.15–20 (Tapanila TN B) · <span class="who" style="color:var(--c3)">Lydia</span> — treenit 18.45–20 (Myllykallion koulu)</div>
+      <div class="items"><span class="who" style="color:var(--c1)">Edvin</span> — Jalkapallo 17.15–20.00 (Piirisarja, Tapanila) · <span class="who" style="color:var(--c2)">Vincent</span> — Jalkapallo 15.00–17.00 (yhteistreenit) · <span class="who" style="color:var(--c3)">Lydia</span> — harjoitukset 18.45–20.00; "Greta borta, Maria Lagerstedt vikarie"</div>
     </div>
     <div class="summary-day">
       <div class="d">Tiistai</div>
-      <div class="items"><span class="who" style="color:var(--c4)">Mamma och pappa</span> — pappa Vallilassa 9–17 · <span class="who" style="color:var(--c1)">Edvin</span> — koripalloharjoitukset 16.45–18.30 (Pohjois-Tapiolan koulu) · <span class="who" style="color:var(--c2)">Vincent</span> — koripalloharjoitukset 18.30–20 (Crusellin peruskoulu)</div>
+      <div class="items"><span class="who" style="color:var(--c1)">Edvin</span> — Koripallo 16.45–18.30; "Skolmästerskap i friidrott på Djurgården" (info till deltagare) · <span class="who" style="color:var(--c2)">Vincent</span> — Koripallo 18.30–20.00; friidrottstävlingar för en del elever · <span class="who" style="color:var(--c3)">Lydia</span> — matematikprov; Greta på friidrottstävlingar (vikarie Maria Lagerstedt) · <span class="who" style="color:var(--c4)">Mamma och pappa</span> — Pappa i Vallila 9–17</div>
     </div>
     <div class="summary-day">
       <div class="d">Keskiviikko</div>
-      <div class="items"><span class="who" style="color:var(--c4)">Mamma och pappa</span> — pappa Vallilassa 9–17</div>
+      <div class="items"><span class="who" style="color:var(--c1)">Edvin</span> — Jalkapallo 15.30–17.00; skolfotografering (returnera fotoblanketten); artkännedomstest (svampar) · <span class="who" style="color:var(--c2)">Vincent</span> — Jalkapallo 15.30–17.00; skolfotografering; OL-koe (8 vattendjur) · <span class="who" style="color:var(--c3)">Lydia</span> — skolfotografering kl. 9.00; gymnastik utomhus (vattenflaska + handduk) · <span class="who" style="color:var(--c4)">Mamma och pappa</span> — Pappa i Vallila 9–17</div>
+    </div>
+    <div class="summary-day">
+      <div class="d">Torstai</div>
+      <div class="items"><span class="who" style="color:var(--c1)">Edvin</span> — Koripallon ulkoharjoitus 19.15–20.15 · <span class="who" style="color:var(--c2)">Vincent</span> — Jalkapallo 15.30–17.00; engelska ordförhör (kap. 1 & 2); gymnastik utomhus (undantagsvis idag)</div>
     </div>
     <div class="summary-day">
       <div class="d">Perjantai</div>
-      <div class="items"><span class="who" style="color:var(--c3)">Lydia</span> — treenit 17–18.30 (Crusellin peruskoulu) · <span class="who" style="color:var(--c2)">Vincent</span> — koripalloharjoitukset 17.15–19 (Lauttasaaren Yhteiskoulu)</div>
+      <div class="items"><span class="who" style="color:var(--c1)">Edvin</span> — engelska ordförhör · <span class="who" style="color:var(--c2)">Vincent</span> — Koripallo 17.15–19.00 · <span class="who" style="color:var(--c3)">Lydia</span> — harjoitukset 17.00–18.30</div>
     </div>
     <div class="summary-day">
       <div class="d">Lauantai</div>
-      <div class="items"><span class="who" style="color:var(--c1)">Edvin</span> — jalkapallon syysturnaus koko päivän (Espoo)</div>
+      <div class="items"><span class="who" style="color:var(--c1)">Edvin</span> — Jalkapallo, syysturnaus koko päivän 8.00–20.00, Espoo</div>
     </div>
     <div class="summary-day">
       <div class="d">Sunnuntai</div>
-      <div class="items"><span class="who" style="color:var(--c2)">Vincent</span> — jalkapallon Helsingin syysturnaus 9–18</div>
+      <div class="items"><span class="who" style="color:var(--c2)">Vincent</span> — Jalkapallo, syysturnaus koko päivän 9.00–18.00, Helsinki</div>
     </div>
   </div>
 
@@ -116,15 +118,23 @@
     <div class="child-name" style="color:var(--c1)"><span class="dot" style="background:var(--c1)"></span>Edvin</div>
     <div class="child-grid">
       <div class="card">
-        <div class="card-title">⚽🏀 Harrastukset</div>
-        <div class="event"><span class="when">Ma 17.15–20</span><span class="what">Jalkapallo-ottelu (Piirisarja, Valkoinen)<br><span class="where">Tapanila TN B, Moisiontie 5, Helsinki</span></span></div>
-        <div class="event"><span class="when">Ti 16.45–18.30</span><span class="what">Koripalloharjoitukset (Ryhmä Green)<br><span class="where">Pohjois-Tapiolan koulu</span></span></div>
-        <div class="event"><span class="when">La 8–20</span><span class="what">Jalkapallon syysturnaus<br><span class="where">Espoo</span></span></div>
+        <div class="card-title">🏀 Harrastukset</div>
+        <div class="event"><span class="when">Ti 16:45–18:30</span><span class="what">Koripallo, Harjoitukset Ryhmä Green<br><span class="where">Pohjois-Tapiolan koulu</span></span></div>
+        <div class="event"><span class="when">To 19:15–20:15</span><span class="what">Koripallo, Ulkoharjoitus<br><span class="where">Matinkylän urheiluhalli, Tynnyritie 2, Espoo</span></span></div>
+        <div class="event"><span class="when">Ma 17:15–20:00</span><span class="what">Jalkapallo, Piirisarja – Valkoinen<br><span class="where">Tapanila TN B, Helsinki</span></span></div>
+        <div class="event"><span class="when">Ke 15:30–17:00</span><span class="what">Jalkapallo, keskiviikkotreenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä"</span></span></div>
+        <div class="event"><span class="when">La 08:00–20:00</span><span class="what">Jalkapallo, Syysturnaus (valkoiset/mustat/oranssit)<br><span class="where">Espoo</span></span></div>
       </div>
       <div class="card">
         <div class="card-title">🎒 Koulu</div>
         <div class="grp">
-          <div class="grp-note">Wilma-tiedote ei ole vielä saapunut tälle viikolle.</div>
+          <div class="grp-label">Muuta tällä viikolla</div>
+          <ul>
+            <li>Skolmästerskap i friidrott på Djurgården (särskild info till deltagare) — ti</li>
+            <li>Fotografering — returnera fotoblanketten snarast om inte redan gjort (inga syskon- eller kompisfoton) — ke</li>
+            <li>Artkännedomstest: svampar — ke</li>
+            <li>Engelska ordförhör — pe</li>
+          </ul>
         </div>
         <div class="timetable-full">
           <div class="ttl">🕐 Lukujärjestys (kiinteä)</div>
@@ -155,16 +165,35 @@
     <div class="child-name" style="color:var(--c2)"><span class="dot" style="background:var(--c2)"></span>Vincent</div>
     <div class="child-grid">
       <div class="card">
-        <div class="card-title">⚽🏀 Harrastukset</div>
-        <div class="event"><span class="when">Ma 15–17</span><span class="what">Jalkapallon yhteistreenit<br><span class="where">Ruukinlahden tekonurmi, Helsinki</span></span></div>
-        <div class="event"><span class="when">Ti 18.30–20</span><span class="what">Koripalloharjoitukset (1/2)<br><span class="where">Crusellin peruskoulu</span></span></div>
-        <div class="event"><span class="when">Pe 17.15–19</span><span class="what">Koripalloharjoitukset<br><span class="where">Lauttasaaren Yhteiskoulu</span></span></div>
-        <div class="event"><span class="when">Su 9–18</span><span class="what">Jalkapallon Helsingin syysturnaus 2026<br><span class="where">Käpylä/Myllypuro/Pihlajamäki</span></span></div>
+        <div class="card-title">🏀 Harrastukset</div>
+        <div class="event"><span class="when">Ti 18:30–20:00</span><span class="what">Koripallo, P16 treenit 1/2<br><span class="where">Crusellin peruskoulu, Santakatu 6, Helsinki</span></span></div>
+        <div class="event"><span class="when">Pe 17:15–19:00</span><span class="what">Koripallo, P16 treenit<br><span class="where">Lauttasaaren Yhteiskoulu 1, Isokaari 19</span></span></div>
+        <div class="event"><span class="when">Ma 15:00–17:00</span><span class="what">Jalkapallo, PPJ L16 yhteistreenit<br><span class="where">Ruukinlahden tekonurmi, Lauttasaarentie 51</span></span></div>
+        <div class="event"><span class="when">Ke 15:30–17:00</span><span class="what">Jalkapallo, PPJ L16 ulkokauden treenit Sinivalko<br><span class="where">Ruukinlahden tekonurmi, Lauttasaarentie 51</span></span></div>
+        <div class="event"><span class="when">To 15:30–17:00</span><span class="what">Jalkapallo, Taitokoulu TK16 harjoitus<br><span class="where">Intersport Areena / Jätkäsaaren kuplahalli</span></span></div>
+        <div class="event"><span class="when">Su 09:00–18:00</span><span class="what">Jalkapallo, Helsingin Syysturnaus 2026<br><span class="where">Käpylä/Myllypuro/Pihlajamäki</span></span></div>
       </div>
       <div class="card">
         <div class="card-title">🎒 Koulu</div>
         <div class="grp">
-          <div class="grp-note">Wilma-tiedote ei ole vielä saapunut tälle viikolle.</div>
+          <div class="grp-label">Läksyt</div>
+          <ul>
+            <li>Matematik: tabelltest (nivå 1–5, igen) + räknesättens ordningsföljd kap. 8–10</li>
+            <li>Modersmål: skrivskoj, högläsning</li>
+            <li>Finska (mofi): kap. 3</li>
+            <li>Bildkonst: ett vattendjur</li>
+            <li>Slöjd (LA-gruppen): teknisk slöjd</li>
+          </ul>
+        </div>
+        <div class="grp">
+          <div class="grp-label">Muuta tällä viikolla</div>
+          <ul>
+            <li>Friidrottstävlingar (för en del elever, se separat Wilma-meddelande) — ti</li>
+            <li>Skolfotografering — ke</li>
+            <li>OL-koe: 8 vattendjur — ke</li>
+            <li>Engelska ordförhör: kap. 1 & 2 — to</li>
+            <li>Gymnastik utomhus (undantagsvis idag i stället för ordinarie dag) — to</li>
+          </ul>
         </div>
         <div class="timetable-full">
           <div class="ttl">🕐 Lukujärjestys (kiinteä)</div>
@@ -193,14 +222,32 @@
     <div class="child-name" style="color:var(--c3)"><span class="dot" style="background:var(--c3)"></span>Lydia</div>
     <div class="child-grid">
       <div class="card">
-        <div class="card-title">🤸 Harrastukset</div>
-        <div class="event"><span class="when">Ma 18.45–20</span><span class="what">Treenit<br><span class="where">Myllykallion koulu</span></span></div>
-        <div class="event"><span class="when">Pe 17–18.30</span><span class="what">Treenit (laji + oheinen)<br><span class="where">Crusellin peruskoulu</span></span></div>
+        <div class="card-title">🏐 Harrastukset</div>
+        <div class="event"><span class="when">Ma 18:45–20:00</span><span class="what">Treenit<br><span class="where">Myllykallion koulu, Myllykalliontie 3</span></span></div>
+        <div class="event"><span class="when">Pe 17:00–18:30</span><span class="what">Treenit (laji+oheinen)<br><span class="where">Crusellin peruskoulu, Santakatu 6</span></span></div>
       </div>
       <div class="card">
         <div class="card-title">🎒 Koulu</div>
         <div class="grp">
-          <div class="grp-note">Wilma-tiedote ei ole vielä saapunut tälle viikolle.</div>
+          <div class="grp-label">Läksyt</div>
+          <ul>
+            <li>Veckoläxa: bokstaven M, s. 19–21 — läs varje vardag</li>
+            <li>Tis: matematik, s. 40–41 (inringade uppgifter)</li>
+            <li>Ons: rita/klipp ut (från tidning) och limma 5 ord som börjar på bokstaven M, skriv orden + bokstaven (görs i bokstavshäftet)</li>
+            <li>Tors: kunna sin egen födelsedag</li>
+            <li>Fre: matematik, kapitel 10, s. 43</li>
+          </ul>
+        </div>
+        <div class="grp">
+          <div class="grp-label">Muuta tällä viikolla</div>
+          <ul>
+            <li>Greta borta, Maria Lagerstedt vikarie — ma</li>
+            <li>Greta på friidrottstävlingar (vikarie Maria Lagerstedt) — ti</li>
+            <li>Matematikprov — ti</li>
+            <li>Gymnastik utomhus — kläder/skor enligt väder, vattenflaska + liten handduk (gärna i egen gympapåse) — ke</li>
+            <li>Skolfotografering — var i tid kl. 9.00 (ingen syskon- eller kompisfotografering) — ke</li>
+            <li>Fler klassföräldrar välkomna — kontakta Greta eller Emma vid intresse</li>
+          </ul>
         </div>
         <div class="timetable-full">
           <div class="ttl">🕐 Lukujärjestys (kiinteä)</div>
@@ -228,15 +275,14 @@
     <div class="child-grid single">
       <div class="card">
         <div class="card-title">📅 Kalenteri</div>
-        <div class="event"><span class="when">Ti 9–17</span><span class="what">Pappa Vallilassa</span></div>
-        <div class="event"><span class="when">Ke 9–17</span><span class="what">Pappa Vallilassa</span></div>
+        <div class="event"><span class="when">Ti 09:00–17:00</span><span class="what">Pappa<br><span class="where">Vallila</span></span></div>
+        <div class="event"><span class="when">Ke 09:00–17:00</span><span class="what">Pappa<br><span class="where">Vallila</span></span></div>
       </div>
     </div>
   </div>
 
   <footer>
-    Koostettu automaattisesti (mode=full) myClub- ja "Mamma och pappa" -kalentereista ICS:nä. Wilma-tiedote ei ollut vielä saapunut tälle viikolle yhdenkään lapsen osalta ajon hetkellä — läksyt/muut viikkotiedot puuttuvat siksi kaikilta.<br>
-    Generoitu: 29.8.2026.
+    Koostettu automaattisesti (myClub + "Mamma och pappa" -kalenteri ICS:nä, Wilman viikkotiedote) — mode=refresh, 29.8.2026.
   </footer>
 
 </body>
