@@ -43,7 +43,7 @@
   .grp:last-child{margin-bottom:0;}
   .grp-label{font-family:'DM Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
   .grp ul{list-style:none;}
-  .note-dim{font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--muted);font-style:italic;}
+  .grp .empty-note{font-size:0.86rem;color:var(--ink-dim);font-style:italic;}
   .timetable-full{margin-top:1rem;padding-top:0.7rem;border-top:1px solid var(--border);}
   .timetable-full .ttl{font-family:'DM Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
   .timetable-full .tt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
@@ -70,30 +70,33 @@
       <h1>Edvin</h1>
       <div class="date-range">Ma 7.9. – Su 13.9.2026</div>
     </div>
-    <div class="source-note">Koostettu myClubista</div>
   </div>
 
+  <!-- EDVIN -->
   <div class="child" style="--line-color:var(--c1)">
     <div class="child-name" style="color:var(--c1)"><span class="dot" style="background:var(--c1)"></span>Edvin</div>
     <div class="child-grid">
       <div class="card">
-        <div class="card-title">⚽🏀 Harrastukset</div>
-        <div class="event"><span class="when">Ma 15.30–17</span><span class="what">Jalkapallo, maanantaitreenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä"</span></span></div>
+        <div class="card-title">⚽ Harrastukset</div>
+        <div class="event"><span class="when">Ma 15.30–17.00</span><span class="what">Jalkapallo, maanantaitreenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä"</span></span></div>
         <div class="event"><span class="when">Ti 16.45–18.30</span><span class="what">Koripallo, harjoitukset (Ryhmä Green)<br><span class="where">Pohjois-Tapiolan koulu</span></span></div>
-        <div class="event"><span class="when">Ke 15.30–17</span><span class="what">Jalkapallo, keskiviikkotreenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä"</span></span></div>
-        <div class="event"><span class="when">To 17.15–20</span><span class="what">Jalkapallo, piirisarjaottelu (Valkoinen)<br><span class="where">Pallomylly TN, Myllytontunpolku 1</span></span></div>
-        <div class="event"><span class="when">Pe 16–18</span><span class="what">Koripallo, harjoitukset (4×/vko treenaaville)<br><span class="where">Honkahalli, Urheilupuistontie 2, Espoo</span></span></div>
+        <div class="event"><span class="when">Ke 15.30–17.00</span><span class="what">Jalkapallo, keskiviikkotreenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä"</span></span></div>
+        <div class="event"><span class="when">To 17.15–20.00</span><span class="what">Jalkapallo, piirisarja – Valkoinen<br><span class="where">Pallomylly TN, Myllytontunpolku 1</span></span></div>
+        <div class="event"><span class="when">Pe 16.00–18.00</span><span class="what">Koripallo, harjoitukset (4x/vko treenaaville)<br><span class="where">Honkahalli, Urheilupuistontie 2</span></span></div>
       </div>
       <div class="card">
         <div class="card-title">🎒 Koulu</div>
-        <div class="note-dim">Ei viikkotiedotetta vielä tälle viikolle.</div>
+        <div class="grp">
+          <div class="grp-label">Läksyt / Muuta tällä viikolla</div>
+          <div class="empty-note">Viikkotiedotetta ei ole vielä saatu tälle viikolle.</div>
+        </div>
         <div class="timetable-full">
           <div class="ttl">🕐 Lukujärjestys (kiinteä)</div>
           <div class="tt-scroll">
             <table>
               <tr><th>Tid</th><th>Mån</th><th>Tis</th><th>Ons</th><th>Tor</th><th>Fre</th></tr>
               <tr><td>8.15–9.00</td><td>Engelska</td><td>–</td><td>Religion/Livsåskådning</td><td>Religion/Livsåskådning</td><td>Engelska</td></tr>
-              <tr><td>9.00–9.45</td><td>Musik</td><td>Mo</td><td>Finska</td><td>Finska</td><td>Mo</td></tr>
+              <tr><td>9.00–9.45</td><td>Mo</td><td>Mo</td><td>Finska</td><td>Finska</td><td>Mo</td></tr>
               <tr class="tt-break"><td>9.45–10.00</td><td colspan="5">rast</td></tr>
               <tr><td>10.00–10.45</td><td>Mo</td><td>Hi</td><td>Mo</td><td>Ma</td><td>BK</td></tr>
               <tr class="tt-break"><td>10.45–11.00</td><td colspan="5">rast</td></tr>
@@ -111,6 +114,7 @@
     </div>
   </div>
 
+  <!-- TULOSSA -->
   <div class="child" style="--line-color:var(--c1)">
     <div class="child-grid single">
       <div class="card">
@@ -123,8 +127,7 @@
   </div>
 
   <footer>
-    Edvinin oma viikkonäkymä — koostettu myClubista. Ei vielä viikkotiedotetta tälle viikolle.<br>
-    Automaattinen päivitys (mode=refresh), luotu 2026-09-04.
+    Edvinin oma viikkonäkymä — koostettu myClubista (fetch_and_parse.py) ja tallennetuista viikkotiedotteista.
   </footer>
 
 </body>

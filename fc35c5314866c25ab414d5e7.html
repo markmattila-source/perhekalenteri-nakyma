@@ -43,7 +43,7 @@
   .grp:last-child{margin-bottom:0;}
   .grp-label{font-family:'DM Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
   .grp ul{list-style:none;}
-  .note-dim{font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--muted);font-style:italic;}
+  .grp .empty-note{font-size:0.86rem;color:var(--ink-dim);font-style:italic;}
   .timetable-full{margin-top:1rem;padding-top:0.7rem;border-top:1px solid var(--border);}
   .timetable-full .ttl{font-family:'DM Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
   .timetable-full .tt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%;}
@@ -70,23 +70,26 @@
       <h1>Vincent</h1>
       <div class="date-range">Ma 7.9. – Su 13.9.2026</div>
     </div>
-    <div class="source-note">Koostettu myClubista</div>
   </div>
 
+  <!-- VINCENT -->
   <div class="child" style="--line-color:var(--c2)">
     <div class="child-name" style="color:var(--c2)"><span class="dot" style="background:var(--c2)"></span>Vincent</div>
     <div class="child-grid">
       <div class="card">
-        <div class="card-title">⚽🏀 Harrastukset</div>
-        <div class="event"><span class="when">Ma 15–17</span><span class="what">Jalkapallo, yhteistreenit<br><span class="where">Ruukinlahden tekonurmi</span></span></div>
-        <div class="event"><span class="when">Ti 18.30–20</span><span class="what">Koripallo, P16-treenit 1/2<br><span class="where">Crusellin peruskoulu</span></span></div>
-        <div class="event"><span class="when">Ke 15.30–17</span><span class="what">Jalkapallo, ulkokauden treenit (Sinivalko)<br><span class="where">Ruukinlahden tekonurmi</span></span></div>
-        <div class="event"><span class="when">To 17.30–20</span><span class="what">Jalkapallo, piirisarjaottelu (Laru Sininen)<br><span class="where">Vesala nap TN, Kontulankaari 15</span></span></div>
-        <div class="event"><span class="when">La 10–17.30</span><span class="what">Koripallo, Tampere Stadium -turnaus (12.–13.9.)<br><span class="where">Tampere</span></span></div>
+        <div class="card-title">⚽ Harrastukset</div>
+        <div class="event"><span class="when">Ma 15.00–17.00</span><span class="what">Jalkapallo, yhteistreenit<br><span class="where">Ruukinlahden tekonurmi</span></span></div>
+        <div class="event"><span class="when">Ti 18.30–20.00</span><span class="what">Koripallo, P16 treenit 1/2<br><span class="where">Crusellin peruskoulu</span></span></div>
+        <div class="event"><span class="when">Ke 15.30–17.00</span><span class="what">Jalkapallo, ulkokauden treenit SINIVALKO<br><span class="where">Ruukinlahden tekonurmi</span></span></div>
+        <div class="event"><span class="when">To 17.30–20.00</span><span class="what">Jalkapallo, piirisarja Laru Sininen<br><span class="where">Vesala nap TN, Kontulankaari 15</span></span></div>
+        <div class="event"><span class="when">La 10.00–17.30</span><span class="what">Koripallo, Tampere Stadium -turnaus<br><span class="where">Tampere</span></span></div>
       </div>
       <div class="card">
         <div class="card-title">🎒 Koulu</div>
-        <div class="note-dim">Ei viikkotiedotetta vielä tälle viikolle.</div>
+        <div class="grp">
+          <div class="grp-label">Läksyt / Muuta tällä viikolla</div>
+          <div class="empty-note">Viikkotiedotetta ei ole vielä saatu tälle viikolle.</div>
+        </div>
         <div class="timetable-full">
           <div class="ttl">🕐 Lukujärjestys (kiinteä)</div>
           <div class="tt-scroll">
@@ -109,6 +112,7 @@
     </div>
   </div>
 
+  <!-- TULOSSA -->
   <div class="child" style="--line-color:var(--c2)">
     <div class="child-grid single">
       <div class="card">
@@ -124,8 +128,7 @@
   </div>
 
   <footer>
-    Vincentin oma viikkonäkymä — koostettu myClubista. Ei vielä viikkotiedotetta tälle viikolle.<br>
-    Automaattinen päivitys (mode=refresh), luotu 2026-09-04.
+    Vincentin oma viikkonäkymä — koostettu myClubista (fetch_and_parse.py) ja tallennetuista viikkotiedotteista.
   </footer>
 
 </body>
