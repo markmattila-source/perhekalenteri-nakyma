@@ -3,32 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vincentin viikko – Viikko 37</title>
+<title>Oma viikko – Vincent</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#f1f2ec; --surface:#ffffff; --border:#dfe2d6;
     --ink:#24261f; --ink-dim:#6f7365; --muted:#93978a;
     --accent:#2c5c48; --accent-tint:rgba(44,92,72,0.07);
-    --c1:#a8462e; --c1-tint:rgba(168,70,46,0.06);
     --c2:#2f5f78; --c2-tint:rgba(47,95,120,0.06);
-    --c3:#8a6d1f; --c3-tint:rgba(138,109,31,0.06);
-    --c4:#3d2c5c; --c4-tint:rgba(61,44,92,0.06);
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:var(--bg);color:var(--ink);font-family:'Fraunces',serif;font-size:16px;line-height:1.65;padding:2rem 1.5rem;max-width:920px;margin:0 auto;}
   .eyebrow{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.22em;color:var(--muted);text-transform:uppercase;margin-bottom:0.5rem;}
-  .masthead{border-bottom:3px solid var(--accent);padding-bottom:1.4rem;margin-bottom:1.8rem;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;}
-  h1{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--ink);line-height:1;letter-spacing:-0.02em;}
+  .masthead{border-bottom:3px solid var(--c2);padding-bottom:1.4rem;margin-bottom:1.8rem;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;}
+  h1{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--c2);line-height:1;letter-spacing:-0.02em;}
   .date-range{font-family:'DM Mono',monospace;font-size:0.85rem;color:var(--ink-dim);margin-top:0.5rem;}
-  .source-note{font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:right;line-height:1.6;}
 
   .child{margin-bottom:2.4rem;border-left:3px solid var(--line-color,var(--border));padding-left:1.4rem;}
-  .child-name{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:1rem;display:flex;align-items:center;gap:0.55rem;}
-  .dot{width:0.6rem;height:0.6rem;border-radius:50%;display:inline-block;}
   .child-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:1.2rem;}
   .child-grid.single{grid-template-columns:1fr;}
-  @media(max-width:680px){.child-grid{grid-template-columns:1fr;} .masthead{align-items:flex-start;} .source-note{text-align:left;}}
+  @media(max-width:680px){.child-grid{grid-template-columns:1fr;} .masthead{align-items:flex-start;}}
 
   .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.3rem 1.4rem;min-width:0;}
   .card-title{font-family:'DM Mono',monospace;font-size:0.66rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:0.9rem;}
@@ -52,11 +46,11 @@
   .timetable-full td:first-child,.timetable-full th:first-child{text-align:left;color:var(--muted);font-family:'DM Mono',monospace;position:sticky;left:0;background:var(--surface);z-index:1;box-shadow:1px 0 0 var(--border);}
   .timetable-full tr.tt-break td{color:var(--muted);opacity:0.6;font-style:italic;}
   .timetable-full tr:last-child td{border-bottom:none;}
-  .grp li{font-size:0.9rem;padding:0.3rem 0;line-height:1.55;}
+  .timetable-full .tt-note{font-size:0.6rem;color:var(--muted);margin-top:0.5rem;line-height:1.5;}
+  .grp li{font-size:0.9rem;padding:0.3rem 0;line-height:1.55;overflow-wrap:anywhere;}
   .grp li::before{content:"–";color:var(--muted);margin-right:0.5rem;}
 
-  .badge-new{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;background:var(--accent-tint);color:var(--accent);padding:0.15rem 0.45rem;border-radius:4px;margin-left:0.4rem;text-transform:uppercase;}
-  .badge-koe{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;background:var(--c1-tint);color:var(--c1);padding:0.15rem 0.45rem;border-radius:4px;margin-right:0.5rem;text-transform:uppercase;}
+  .badge-koe{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;background:var(--c2-tint);color:var(--c2);padding:0.15rem 0.45rem;border-radius:4px;margin-right:0.5rem;text-transform:uppercase;}
 
   footer{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--muted);line-height:1.8;}
 </style>
@@ -71,54 +65,67 @@
     </div>
   </div>
 
-  <!-- VINCENT (verbatim copy of family dashboard's Vincent block) -->
   <div class="child" style="--line-color:var(--c2)">
-    <div class="child-name" style="color:var(--c2)"><span class="dot" style="background:var(--c2)"></span>Vincent</div>
     <div class="child-grid">
       <div class="card">
-        <div class="card-title">⚽🏀 Harrastukset</div>
-        <div class="event"><span class="when">Ma 15–17</span><span class="what">Jalkapallo: PPJ L16 Yhteistreenit<br><span class="where">Ruukinlahden tekonurmi</span></span></div>
-        <div class="event"><span class="when">Ti 18:30–20</span><span class="what">Koripallo: P16 treenit 1/2<br><span class="where">Crusellin peruskoulu</span></span></div>
-        <div class="event"><span class="when">Ke 15:30–17</span><span class="what">Jalkapallo: ulkokauden treenit SINIVALKO<br><span class="where">Ruukinlahden tekonurmi</span></span></div>
-        <div class="event"><span class="when">To 17:30–20</span><span class="what">Jalkapallo: Piirisarja Laru Sininen<br><span class="where">Vesala nap TN, Kontulankaari 15</span></span></div>
-        <div class="event"><span class="when">La 10–17:30</span><span class="what">Koripallo: Tampere Stadium -turnaus 12.–13.9.<br><span class="where">Tampere</span></span></div>
+        <div class="card-title">🏅 Harrastukset</div>
+        <div class="event"><span class="when">Ma 15–17</span><span class="what">Jalkapallo: Yhteistreenit<br><span class="where">Ruukinlahden tekonurmi</span></span></div>
+        <div class="event"><span class="when">Ke 15.30–17</span><span class="what">Jalkapallo: Ulkokauden treenit, Sinivalko<br><span class="where">Ruukinlahden tekonurmi</span></span></div>
+        <div class="event"><span class="when">To 17.30–20</span><span class="what">Jalkapallo: Piirisarja, Laru Sininen<br><span class="where">Vesala nap TN, Kontulankaari 15</span></span></div>
+        <div class="event"><span class="when">La–Su</span><span class="what">Koripallo: Tampere Stadium -turnaus, 12.–13.9.<br><span class="where">Tampere (la klo 10–17.30)</span></span></div>
       </div>
       <div class="card">
         <div class="card-title">🎒 Koulu</div>
         <div class="grp">
-          <div class="grp-label">Tiedote</div>
-          <ul><li>Ei ole vielä saapunut tälle viikolle.</li></ul>
+          <div class="grp-label">Läksyt</div>
+          <ul>
+            <li>Matematik: tabelltest (nivå 1–5, igen), räknesättens ordningsföljd (Stjärnstoppet kap. 12), intro till röda helheten – räkna med uppställning kap. 13</li>
+            <li>Modersmål: skrivskoj, högläsning, Språkresan s. 34–35</li>
+            <li>Engelska: kapitel 3</li>
+            <li>Finska (mofi): kap. 4</li>
+            <li>Omgivningslära: kap. 4–5</li>
+            <li>Slöjd (LA-gruppen): teknisk slöjd</li>
+          </ul>
+        </div>
+        <div class="grp">
+          <div class="grp-label">Muuta tällä viikolla</div>
+          <ul>
+            <li>Trafiksäkerhetsvecka</li>
+            <li>Ma: Biblioteksbesök — ta med eget bibliotekskort, låna gärna böcker hem</li>
+            <li>Ti: Gymnastik utomhus — ta med liten handduk</li>
+            <li>Ti: Föräldramöte kl. 16.30–17.45 (16.30–17.15 egen klass i A311, 17.15–17.45 gemensam del i matsalen för åk 3–6)</li>
+            <li>Ke: Besök av Marthaförbundet (Marie Kellgren) — berättar om "smartfisk"</li>
+            <li>Ke: Matematikprov (gröna helheten, kap. 1–12) — räknesättens ordningsföljd, multiplikationstabellerna 1–10, räknesättens begrepp, textuppgifter. Repetera s. 52–57 och 202–205, sammanfattning s. 55</li>
+            <li>Pe: Finska (mofi) skriftligt ordförhör</li>
+          </ul>
         </div>
         <div class="timetable-full">
           <div class="ttl">🕐 Lukujärjestys (kiinteä) — 4LA</div>
+          <div class="tt-note" style="margin-top:0;margin-bottom:0.5rem;">Koulupäivän kesto vaihtelee päivittäin: Ma 8.15–14.00, Ti 8.15–13.00, Ke 9.00–14.00, To 8.15–13.00, Pe 9.00–13.00.</div>
           <div class="tt-scroll">
             <table>
-              <tr><th>Aika</th><th>Mån</th><th>Tis</th><th>Ons</th><th>Tor</th><th>Fre</th></tr>
-              <tr><td>8:15–9:00</td><td>FI (Johanna/Anna/Julia)</td><td>X</td><td>–</td><td>EN (Emma)</td><td>–</td></tr>
-              <tr><td>9:00–9:45</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
-              <tr class="tt-break"><td>9:45–10:00</td><td colspan="5">rast</td></tr>
-              <tr><td>10:00–10:45</td><td>RE/LIVS</td><td>MU (Petra)</td><td>X</td><td>X</td><td>X</td></tr>
-              <tr class="tt-break"><td>10:45–11:10</td><td colspan="5">rast</td></tr>
-              <tr class="tt-break"><td>11:10–11:30</td><td colspan="5">lunch</td></tr>
-              <tr><td>11:30–12:15</td><td>X</td><td>GY</td><td>SLÖJD</td><td>X</td><td>X</td></tr>
-              <tr><td>12:15–13:00</td><td>X</td><td>GY</td><td>SLÖJD</td><td>X</td><td>FI (Johanna/Anna/Julia)</td></tr>
-              <tr><td>13:00–13:15</td><td>rast</td><td>–</td><td>rast</td><td>–</td><td>–</td></tr>
-              <tr><td>13:15–14:00</td><td>EN (Emma)</td><td>–</td><td>X</td><td>–</td><td>–</td></tr>
+              <tr><th>Tid</th><th>Mån</th><th>Tis</th><th>Ons</th><th>Tor</th><th>Fre</th></tr>
+              <tr><td>8.15–9.00</td><td>FI (Johanna/Anna/Julia)</td><td>X</td><td>–</td><td>EN (Emma)</td><td>–</td></tr>
+              <tr><td>9.00–9.45</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
+              <tr class="tt-break"><td>9.45–10.00</td><td colspan="5">rast</td></tr>
+              <tr><td>10.00–10.45</td><td>RE/LIVS</td><td>MU (Petra)</td><td>X</td><td>X</td><td>X</td></tr>
+              <tr class="tt-break"><td>10.45–11.10</td><td colspan="5">rast</td></tr>
+              <tr class="tt-break"><td>11.10–11.30</td><td colspan="5">lunch</td></tr>
+              <tr><td>11.30–12.15</td><td>X</td><td>GY</td><td>SLÖJD</td><td>X</td><td>X</td></tr>
+              <tr><td>12.15–13.00</td><td>X</td><td>GY</td><td>SLÖJD</td><td>X</td><td>FI (Johanna/Anna/Julia)</td></tr>
+              <tr><td>13.00–13.15</td><td>rast</td><td>–</td><td>rast</td><td>–</td><td>–</td></tr>
+              <tr><td>13.15–14.00</td><td>EN (Emma)</td><td>–</td><td>X</td><td>–</td><td>–</td></tr>
             </table>
           </div>
-          <div class="ttl" style="margin-top:0.6rem;">Koulupäivän kesto: Ma 8:15–14:00 · Ti 8:15–13:00 · Ke 9:00–14:00 · To 8:15–13:00 · Pe 9:00–13:00</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- VINCENTIN TULOSSA -->
   <div class="child" style="--line-color:var(--c2)">
     <div class="child-grid single">
       <div class="card">
         <div class="card-title">🗓️ Tulossa</div>
-        <div class="event"><span class="when">8.9.</span><span class="what">Föräldramöte kl. 16.30–17.45 (16.30–17.15 i klassen, 17.15–17.45 gemensam del med rektorerna i matsalen)</span></div>
-        <div class="event"><span class="when">9.9.</span><span class="what"><span class="badge-koe">koe</span>Matematik-prov: gröna helheten</span></div>
         <div class="event"><span class="when">16.9.</span><span class="what"><span class="badge-koe">koe</span>OL-koe: 6 växter</span></div>
         <div class="event"><span class="when">25.9.</span><span class="what">HoS-dagen, gemensam frukost</span></div>
         <div class="event"><span class="when">1.10.</span><span class="what"><span class="badge-koe">koe</span>Engelska-prov</span></div>
@@ -128,8 +135,8 @@
   </div>
 
   <footer>
-    Tiedote ei saapunut tälle viikolle — koulukortti näyttää vain kiinteän lukujärjestyksen.<br>
-    Koostettu automaattisesti (mode=refresh) 2026-09-06.
+    Koostettu myClub-kalenterista (ICS) sekä Wilman viikkotiedotteesta.<br>
+    Julkaistu automaattisesti (mode=refresh) 6.9.2026.
   </footer>
 
 </body>
