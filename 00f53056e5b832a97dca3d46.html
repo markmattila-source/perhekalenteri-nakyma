@@ -52,6 +52,7 @@
   .timetable-full td:first-child,.timetable-full th:first-child{text-align:left;color:var(--muted);font-family:'DM Mono',monospace;position:sticky;left:0;background:var(--surface);z-index:1;box-shadow:1px 0 0 var(--border);}
   .timetable-full tr.tt-break td{color:var(--muted);opacity:0.6;font-style:italic;}
   .timetable-full tr:last-child td{border-bottom:none;}
+  .timetable-full .day-duration{font-family:'DM Mono',monospace;font-size:0.62rem;color:var(--muted);margin-bottom:0.5rem;}
   .grp li{font-size:0.9rem;padding:0.3rem 0;line-height:1.55;}
   .grp li::before{content:"–";color:var(--muted);margin-right:0.5rem;}
 
@@ -71,32 +72,32 @@
     </div>
   </div>
 
-  <!-- EDVIN — verbatim copy of the .child block from the family dashboard -->
+  <!-- EDVIN -->
   <div class="child" style="--line-color:var(--c1)">
     <div class="child-name" style="color:var(--c1)"><span class="dot" style="background:var(--c1)"></span>Edvin</div>
     <div class="child-grid">
       <div class="card">
-        <div class="card-title">🏀⚽ Harrastukset</div>
-        <div class="event"><span class="when">Ti 16:45–18:30</span><span class="what">Koripallo, harjoitukset (Ryhmä Green)<br><span class="where">Pohjois-Tapiolan koulu</span></span></div>
-        <div class="event"><span class="when">Ke 15:30–17:00</span><span class="what">Jalkapallo, keskiviikkotreenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä"</span></span></div>
-        <div class="event"><span class="when">To 17:15–20:00</span><span class="what">Jalkapallo, piirisarja – Valkoinen<br><span class="where">Pallomylly TN</span></span></div>
-        <div class="event"><span class="when">Pe 16:00–18:00</span><span class="what">Koripallo, harjoitukset (4x/vko treenaaville)<br><span class="where">Honkahalli</span></span></div>
+        <div class="card-title">⚽🏀 Harrastukset</div>
+        <div class="event"><span class="when">Ti 16:45–18:30</span><span class="what">Koripallo — Pojat U13 (2014): harjoitukset ryhmä Green<br><span class="where">Pohjois-Tapiolan koulu</span></span></div>
+        <div class="event"><span class="when">Ke 15:30–17:00</span><span class="what">Jalkapallo — PPJ Laru 2014: keskiviikkotreenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä"</span></span></div>
+        <div class="event"><span class="when">To 17:15–20:00</span><span class="what">Jalkapallo — PPJ Laru 2014: Piirisarja, Valkoinen<br><span class="where">Pallomylly TN</span></span></div>
+        <div class="event"><span class="when">Pe 16:00–18:00</span><span class="what">Koripallo — Pojat U13: harjoitukset (4x/vko treenaaville)<br><span class="where">Honkahalli, Espoo</span></span></div>
       </div>
       <div class="card">
         <div class="card-title">🎒 Koulu</div>
         <div class="grp">
           <div class="grp-label">Muuta tällä viikolla</div>
           <ul>
-            <li>Musikförhör (må)</li>
-            <li>Lina på kurs, vikarie Lovisa Schulman (må)</li>
-            <li>Föräldramöte ti kl. 17.15–17.45 gemensamt i matsalen, 17.45–18.30 i egna klassen</li>
-            <li>Artkännedomstest: däggdjur (ke)</li>
-            <li>Skoldagen slutar redan kl. 13.00 (i stället för 14.00) inför torsdagens utfärd (ke)</li>
-            <li>Utfärd till Räfsö, skoldag kl. 8.15–ca 15.30 (to)</li>
+            <li>Mån: Musikförhör</li>
+            <li>Mån: Lina på kurs (vikarie Lovisa Schulman)</li>
+            <li>Tis: Föräldramöte kl. 17.15–17.45 gemensamt i matsalen, 17.45–18.30 i egna klassen</li>
+            <li>Ons: Artkännedomstest: däggdjur</li>
+            <li>Ons: Skoldagen slutar redan kl. 13.00 (i stället för 14.00) inför torsdagens utfärd</li>
+            <li>Tors: Utfärd till Räfsö, skoldag kl. 8.15–ca 15.30</li>
           </ul>
         </div>
         <div class="timetable-full">
-          <div class="ttl">🕐 Lukujärjestys (kiinteä)</div>
+          <div class="ttl">🕐 Lukujärjestys (kiinteä) — 6VV</div>
           <div class="tt-scroll">
             <table>
               <tr><th>Tid</th><th>Mån</th><th>Tis</th><th>Ons</th><th>Tor</th><th>Fre</th></tr>
@@ -124,14 +125,14 @@
     <div class="child-grid single">
       <div class="card">
         <div class="card-title">🗓️ Tulossa</div>
-        <div class="event"><span class="when">10.9.</span><span class="what">Utfärd till Räfsö, skoldag kl. 8.15–ca 15.30</span></div>
         <div class="event"><span class="when">17.9.</span><span class="what">Idrottskarusellen</span></div>
       </div>
     </div>
   </div>
 
   <footer>
-    Koostettu automaattisesti (mode=refresh) 8.9.2026 — osa perheen viikkokalenteria.
+    Koostettu automaattisesti — myClub-kalenteri (ICS), Wilman viikkotiedote.<br>
+    Päivitetty: 9.9.2026 (mode=refresh)
   </footer>
 
 </body>
