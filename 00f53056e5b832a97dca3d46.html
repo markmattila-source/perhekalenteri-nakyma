@@ -11,9 +11,6 @@
     --ink:#24261f; --ink-dim:#6f7365; --muted:#93978a;
     --accent:#2c5c48; --accent-tint:rgba(44,92,72,0.07);
     --c1:#a8462e; --c1-tint:rgba(168,70,46,0.06);
-    --c2:#2f5f78; --c2-tint:rgba(47,95,120,0.06);
-    --c3:#8a6d1f; --c3-tint:rgba(138,109,31,0.06);
-    --c4:#3d2c5c; --c4-tint:rgba(61,44,92,0.06);
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:var(--bg);color:var(--ink);font-family:'Fraunces',serif;font-size:16px;line-height:1.65;padding:2rem 1.5rem;max-width:920px;margin:0 auto;}
@@ -21,14 +18,13 @@
   .masthead{border-bottom:3px solid var(--accent);padding-bottom:1.4rem;margin-bottom:1.8rem;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;}
   h1{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--ink);line-height:1;letter-spacing:-0.02em;}
   .date-range{font-family:'DM Mono',monospace;font-size:0.85rem;color:var(--ink-dim);margin-top:0.5rem;}
-  .source-note{font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:right;line-height:1.6;}
 
   .child{margin-bottom:2.4rem;border-left:3px solid var(--line-color,var(--border));padding-left:1.4rem;}
   .child-name{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:1rem;display:flex;align-items:center;gap:0.55rem;}
   .dot{width:0.6rem;height:0.6rem;border-radius:50%;display:inline-block;}
   .child-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:1.2rem;}
   .child-grid.single{grid-template-columns:1fr;}
-  @media(max-width:680px){.child-grid{grid-template-columns:1fr;} .masthead{align-items:flex-start;} .source-note{text-align:left;}}
+  @media(max-width:680px){.child-grid{grid-template-columns:1fr;} .masthead{align-items:flex-start;}}
 
   .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.3rem 1.4rem;min-width:0;}
   .card-title{font-family:'DM Mono',monospace;font-size:0.66rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:0.9rem;}
@@ -52,11 +48,9 @@
   .timetable-full td:first-child,.timetable-full th:first-child{text-align:left;color:var(--muted);font-family:'DM Mono',monospace;position:sticky;left:0;background:var(--surface);z-index:1;box-shadow:1px 0 0 var(--border);}
   .timetable-full tr.tt-break td{color:var(--muted);opacity:0.6;font-style:italic;}
   .timetable-full tr:last-child td{border-bottom:none;}
-  .timetable-full .day-duration{font-family:'DM Mono',monospace;font-size:0.62rem;color:var(--muted);margin-bottom:0.5rem;}
   .grp li{font-size:0.9rem;padding:0.3rem 0;line-height:1.55;}
   .grp li::before{content:"–";color:var(--muted);margin-right:0.5rem;}
 
-  .badge-new{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;background:var(--accent-tint);color:var(--accent);padding:0.15rem 0.45rem;border-radius:4px;margin-left:0.4rem;text-transform:uppercase;}
   .badge-koe{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;background:var(--c1-tint);color:var(--c1);padding:0.15rem 0.45rem;border-radius:4px;margin-right:0.5rem;text-transform:uppercase;}
 
   footer{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--muted);line-height:1.8;}
@@ -77,31 +71,31 @@
     <div class="child-name" style="color:var(--c1)"><span class="dot" style="background:var(--c1)"></span>Edvin</div>
     <div class="child-grid">
       <div class="card">
-        <div class="card-title">⚽🏀 Harrastukset</div>
-        <div class="event"><span class="when">Ti 16:45–18:30</span><span class="what">Koripallo — Pojat U13 (2014): harjoitukset ryhmä Green<br><span class="where">Pohjois-Tapiolan koulu</span></span></div>
-        <div class="event"><span class="when">Ke 15:30–17:00</span><span class="what">Jalkapallo — PPJ Laru 2014: keskiviikkotreenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä"</span></span></div>
-        <div class="event"><span class="when">To 17:15–20:00</span><span class="what">Jalkapallo — PPJ Laru 2014: Piirisarja, Valkoinen<br><span class="where">Pallomylly TN</span></span></div>
-        <div class="event"><span class="when">Pe 16:00–18:00</span><span class="what">Koripallo — Pojat U13: harjoitukset (4x/vko treenaaville)<br><span class="where">Honkahalli, Espoo</span></span></div>
+        <div class="card-title">🏀⚽ Harrastukset</div>
+        <div class="event"><span class="when">Ti 16:45–18:30</span><span class="what">Koripallo, harjoitukset (Ryhmä Green)<br><span class="where">Pohjois-Tapiolan koulu</span></span></div>
+        <div class="event"><span class="when">Ke 15:30–17:00</span><span class="what">Jalkapallo, keskiviikkotreenit<br><span class="where">Lauttasaaren urheilupuisto "Pyrkkä"</span></span></div>
+        <div class="event"><span class="when">To 17:15–20:00</span><span class="what">Jalkapallo, piirisarja – Valkoinen<br><span class="where">Pallomylly TN, Helsinki</span></span></div>
+        <div class="event"><span class="when">Pe 16:00–18:00</span><span class="what">Koripallo, harjoitukset (4x/vko)<br><span class="where">Honkahalli, Espoo</span></span></div>
       </div>
       <div class="card">
         <div class="card-title">🎒 Koulu</div>
         <div class="grp">
           <div class="grp-label">Muuta tällä viikolla</div>
           <ul>
-            <li>Mån: Musikförhör</li>
-            <li>Mån: Lina på kurs (vikarie Lovisa Schulman)</li>
-            <li>Tis: Föräldramöte kl. 17.15–17.45 gemensamt i matsalen, 17.45–18.30 i egna klassen</li>
-            <li>Ons: Artkännedomstest: däggdjur</li>
-            <li>Ons: Skoldagen slutar redan kl. 13.00 (i stället för 14.00) inför torsdagens utfärd</li>
-            <li>Tors: Utfärd till Räfsö, skoldag kl. 8.15–ca 15.30</li>
+            <li>Musikförhör (ma)</li>
+            <li>Lina på kurs, vikarie Lovisa Schulman (ma)</li>
+            <li>Vanhempainilta ti klo 17.15–17.45 yhteinen ruokasalissa, 17.45–18.30 omassa luokassa</li>
+            <li>Artkännedomstest: nisäkkäät (ke)</li>
+            <li>Koulupäivä loppuu jo klo 13.00 (norm. 14.00) torstain retken vuoksi (ke)</li>
+            <li>Retki Räfsöhön, koulupäivä klo 8.15–n. 15.30 (to)</li>
           </ul>
         </div>
         <div class="timetable-full">
-          <div class="ttl">🕐 Lukujärjestys (kiinteä) — 6VV</div>
+          <div class="ttl">🕐 Lukujärjestys (kiinteä)</div>
           <div class="tt-scroll">
             <table>
-              <tr><th>Tid</th><th>Mån</th><th>Tis</th><th>Ons</th><th>Tor</th><th>Fre</th></tr>
-              <tr><td>8.15–9.00</td><td>Engelska</td><td>–</td><td>Religion/Livsåskådning</td><td>Religion/Livsåskådning</td><td>Engelska</td></tr>
+              <tr><th>Aika</th><th>Mån</th><th>Tis</th><th>Ons</th><th>Tor</th><th>Fre</th></tr>
+              <tr><td>8.15–9.00</td><td>Engelska</td><td>–</td><td>Religion/Livs.</td><td>Religion/Livs.</td><td>Engelska</td></tr>
               <tr><td>9.00–9.45</td><td>Musik</td><td>Mo</td><td>Finska</td><td>Finska</td><td>Mo</td></tr>
               <tr class="tt-break"><td>9.45–10.00</td><td colspan="5">rast</td></tr>
               <tr><td>10.00–10.45</td><td>Mo</td><td>Hi</td><td>Mo</td><td>Ma</td><td>BK</td></tr>
@@ -131,8 +125,7 @@
   </div>
 
   <footer>
-    Koostettu automaattisesti — myClub-kalenteri (ICS), Wilman viikkotiedote.<br>
-    Päivitetty: 9.9.2026 (mode=refresh)
+    Koostettu automaattisesti: myClub-kalenteri (ICS) + Wilman viikkotiedote.
   </footer>
 
 </body>
