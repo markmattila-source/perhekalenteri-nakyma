@@ -10,21 +10,25 @@
     --bg:#f1f2ec; --surface:#ffffff; --border:#dfe2d6;
     --ink:#24261f; --ink-dim:#6f7365; --muted:#93978a;
     --accent:#2c5c48; --accent-tint:rgba(44,92,72,0.07);
+    --c1:#a8462e; --c1-tint:rgba(168,70,46,0.06);
     --c2:#2f5f78; --c2-tint:rgba(47,95,120,0.06);
+    --c3:#8a6d1f; --c3-tint:rgba(138,109,31,0.06);
+    --c4:#3d2c5c; --c4-tint:rgba(61,44,92,0.06);
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:var(--bg);color:var(--ink);font-family:'Fraunces',serif;font-size:16px;line-height:1.65;padding:2rem 1.5rem;max-width:920px;margin:0 auto;}
   .eyebrow{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.22em;color:var(--muted);text-transform:uppercase;margin-bottom:0.5rem;}
-  .masthead{border-bottom:3px solid var(--accent);padding-bottom:1.4rem;margin-bottom:1.8rem;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;}
+  .masthead{border-bottom:3px solid var(--c2);padding-bottom:1.4rem;margin-bottom:1.8rem;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;}
   h1{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--ink);line-height:1;letter-spacing:-0.02em;}
   .date-range{font-family:'DM Mono',monospace;font-size:0.85rem;color:var(--ink-dim);margin-top:0.5rem;}
+  .source-note{font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);text-align:right;line-height:1.6;}
 
   .child{margin-bottom:2.4rem;border-left:3px solid var(--line-color,var(--border));padding-left:1.4rem;}
   .child-name{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:1rem;display:flex;align-items:center;gap:0.55rem;}
   .dot{width:0.6rem;height:0.6rem;border-radius:50%;display:inline-block;}
   .child-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:1.2rem;}
   .child-grid.single{grid-template-columns:1fr;}
-  @media(max-width:680px){.child-grid{grid-template-columns:1fr;} .masthead{align-items:flex-start;}}
+  @media(max-width:680px){.child-grid{grid-template-columns:1fr;} .masthead{align-items:flex-start;} .source-note{text-align:left;}}
 
   .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.3rem 1.4rem;min-width:0;}
   .card-title{font-family:'DM Mono',monospace;font-size:0.66rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:0.9rem;}
@@ -51,7 +55,8 @@
   .grp li{font-size:0.9rem;padding:0.3rem 0;line-height:1.55;}
   .grp li::before{content:"–";color:var(--muted);margin-right:0.5rem;}
 
-  .badge-koe{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;background:var(--c2-tint);color:var(--c2);padding:0.15rem 0.45rem;border-radius:4px;margin-right:0.5rem;text-transform:uppercase;}
+  .badge-new{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;background:var(--accent-tint);color:var(--accent);padding:0.15rem 0.45rem;border-radius:4px;margin-left:0.4rem;text-transform:uppercase;}
+  .badge-koe{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;background:var(--c1-tint);color:var(--c1);padding:0.15rem 0.45rem;border-radius:4px;margin-right:0.5rem;text-transform:uppercase;}
 
   footer{margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid var(--border);font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--muted);line-height:1.8;}
 </style>
@@ -72,50 +77,50 @@
     <div class="child-grid">
       <div class="card">
         <div class="card-title">🏀⚽ Harrastukset</div>
-        <div class="event"><span class="when">Ma 15:00–17:00</span><span class="what">Jalkapallo, yhteistreenit<br><span class="where">Ruukinlahden tekonurmi</span></span></div>
-        <div class="event"><span class="when">Ti 18:30–20:00</span><span class="what">Koripallo, treenit 1/2<br><span class="where">Crusellin peruskoulu</span></span></div>
-        <div class="event"><span class="when">To 15:30–17:00</span><span class="what">Jalkapallo, Taitokoulu-harjoitus<br><span class="where">Intersport Areena / Jätkäsaaren kuplahalli</span></span></div>
-        <div class="event"><span class="when">Su 11:20–16:00</span><span class="what">Jalkapallo, Taitokoulu Miniliiga (7v7)<br><span class="where">Intersport Areena / Jätkäsaaren kuplahalli</span></span></div>
-        <div class="event"><span class="when">Su 21:00</span><span class="what">Sitovat ilmoittautumiset talvisarjoihin 2026–2027<br><span class="where">Kauniaisten jalkapallohalli (GrIFK Arena)</span></span></div>
+        <div class="event"><span class="when">Ma 15.00–17.00</span><span class="what">Jalkapallo, yhteistreenit<br><span class="where">Ruukinlahden tekonurmi</span></span></div>
+        <div class="event"><span class="when">Ti 18.30–20.00</span><span class="what">Koripallo, treenit 1/2<br><span class="where">Crusellin peruskoulu</span></span></div>
+        <div class="event"><span class="when">To 15.30–17.00</span><span class="what">Jalkapallo, Taitokoulu-harjoitus<br><span class="where">Intersport Areena / Jätkäsaaren kuplahalli</span></span></div>
+        <div class="event"><span class="when">Su 11.20–16.00</span><span class="what">Jalkapallo, PPJ Miniliiga (7v7)<br><span class="where">Intersport Areena / Jätkäsaaren kuplahalli</span></span></div>
+        <div class="event"><span class="when">Su 21.00</span><span class="what">Jalkapallo — sitovat ilmoittautumiset talvisarjoihin 2026–2027 (määräaika)<br><span class="where">Kauniaisten jalkapallohalli (GrIFK Arena)</span></span></div>
       </div>
       <div class="card">
         <div class="card-title">🎒 Koulu</div>
         <div class="grp">
           <div class="grp-label">Läksyt</div>
           <ul>
-            <li>Matematik: tabelltest, räkna med uppställning kap. 14–16</li>
-            <li>Modersmål: skrivskoj, högläsning (En liten vit lögn), Språkresan</li>
-            <li>Engelska: kapitel 4</li>
+            <li>Matematik: tabelltest, laskeminen allekkain kap. 14–16</li>
+            <li>Modersmål: kirjoitustehtävä, ääneenlukua (En liten vit lögn), Språkresan</li>
+            <li>Engelska: kappale 4</li>
             <li>Finska (mofi): kap. 4</li>
             <li>Omgivningslära: kap. 5 (som fisken i vattnet)</li>
-            <li>Slöjd (LA-gruppen): teknisk slöjd</li>
+            <li>Slöjd (LA-ryhmä): tekninen työ</li>
           </ul>
         </div>
         <div class="grp">
           <div class="grp-label">Muuta tällä viikolla</div>
           <ul>
-            <li>Utprintade sidor från föräldramötet skickas hem i ryggsäcken (mån)</li>
-            <li>OL-förhör: 6 växter (ons)</li>
-            <li>Skoldagen slutar redan kl. 13.00 inför torsdagens idrottskarusell (ons)</li>
-            <li>Engelska wordtest (tors)</li>
-            <li>Idrottskarusellen på Djurgården — skoldagen börjar kl. 10.00 (senare än vanligt) och slutar ca kl. 15.30. Ta med ett litet hälsosamt mellanmål (frukt, smörgås eller grönsak) (tors)</li>
+            <li>Ma: Vanhempainillan tulosteet tulevat kotiin repussa</li>
+            <li>Ke: OL-kuulustelu: 6 kasvia</li>
+            <li>Ke: Koulupäivä loppuu jo klo 13.00 (tavallisesta poiketen) torstain idrottskarusellin vuoksi</li>
+            <li>To: Englannin sanakoe (wordtest)</li>
+            <li>To: Idrottskarusellen Djurgårdenilla — koulupäivä alkaa klo 10.00 (myöhemmin kuin tavallisesti) ja loppuu n. klo 15.30. Mukaan pieni terveellinen välipala (hedelmä, voileipä tai kasvis)</li>
           </ul>
         </div>
         <div class="timetable-full">
-          <div class="ttl">🕐 Lukujärjestys (kiinteä) — koulupäivä: Ma 8:15–14:00, Ti 8:15–13:00, Ke 9:00–14:00, To 8:15–13:00, Pe 9:00–13:00</div>
+          <div class="ttl">🕐 Lukujärjestys (kiinteä)</div>
           <div class="tt-scroll">
             <table>
-              <tr><th>Aika</th><th>Mån</th><th>Tis</th><th>Ons</th><th>Tor</th><th>Fre</th></tr>
-              <tr><td>8:15–9:00</td><td>FI (Johanna/Anna/Julia)</td><td>X</td><td>–</td><td>EN (Emma)</td><td>–</td></tr>
-              <tr><td>9:00–9:45</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
-              <tr class="tt-break"><td>9:45–10:00</td><td colspan="5">rast</td></tr>
-              <tr><td>10:00–10:45</td><td>RE/LIVS</td><td>MU (Petra)</td><td>X</td><td>X</td><td>X</td></tr>
-              <tr class="tt-break"><td>10:45–11:10</td><td colspan="5">rast</td></tr>
-              <tr class="tt-break"><td>11:10–11:30</td><td colspan="5">lunch</td></tr>
-              <tr><td>11:30–12:15</td><td>X</td><td>GY</td><td>SLÖJD</td><td>X</td><td>X</td></tr>
-              <tr><td>12:15–13:00</td><td>X</td><td>GY</td><td>SLÖJD</td><td>X</td><td>FI (Johanna/Anna/Julia)</td></tr>
-              <tr><td>13:00–13:15</td><td>rast</td><td>–</td><td>rast</td><td>–</td><td>–</td></tr>
-              <tr><td>13:15–14:00</td><td>EN (Emma)</td><td>–</td><td>X</td><td>–</td><td>–</td></tr>
+              <tr><th>Aika</th><th>Ma</th><th>Ti</th><th>Ke</th><th>To</th><th>Pe</th></tr>
+              <tr><td>8.15–9.00</td><td>FI (Johanna/Anna/Julia)</td><td>X</td><td>–</td><td>EN (Emma)</td><td>–</td></tr>
+              <tr><td>9.00–9.45</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
+              <tr class="tt-break"><td>9.45–10.00</td><td colspan="5">rast</td></tr>
+              <tr><td>10.00–10.45</td><td>RE/LIVS</td><td>MU (Petra)</td><td>X</td><td>X</td><td>X</td></tr>
+              <tr class="tt-break"><td>10.45–11.10</td><td colspan="5">rast</td></tr>
+              <tr class="tt-break"><td>11.10–11.30</td><td colspan="5">lunch</td></tr>
+              <tr><td>11.30–12.15</td><td>X</td><td>GY</td><td>SLÖJD</td><td>X</td><td>X</td></tr>
+              <tr><td>12.15–13.00</td><td>X</td><td>GY</td><td>SLÖJD</td><td>X</td><td>FI (Johanna/Anna/Julia)</td></tr>
+              <tr><td>13.00–13.15</td><td>rast</td><td>–</td><td>rast</td><td>–</td><td>–</td></tr>
+              <tr><td>13.15–14.00</td><td>EN (Emma)</td><td>–</td><td>X</td><td>–</td><td>–</td></tr>
             </table>
           </div>
         </div>
@@ -123,29 +128,30 @@
     </div>
   </div>
 
-  <!-- TULOSSA -->
+  <!-- VINCENT'S TULOSSA -->
   <div class="child" style="--line-color:var(--c2)">
     <div class="child-grid single">
       <div class="card">
         <div class="card-title">🗓️ Tulossa</div>
-        <div class="event"><span class="when">23.9.</span><span class="what"><span class="badge-koe">koe</span>OL-koe: 8 fiskar</span></div>
-        <div class="event"><span class="when">25.9.</span><span class="what">HoS-dagen, gemensam frukost</span></div>
-        <div class="event"><span class="when">30.9.</span><span class="what"><span class="badge-koe">koe</span>OL självständigt arbete (prov med tillgång till lärobok/häfte — behöver ej övas hemma i förväg)</span></div>
-        <div class="event"><span class="when">1.10.</span><span class="what"><span class="badge-koe">koe</span>Engelska-prov</span></div>
-        <div class="event"><span class="when">6.10.</span><span class="what"><span class="badge-koe">koe</span>Finska-prov (mofi)</span></div>
-        <div class="event"><span class="when">12.10.</span><span class="what">Höstlov (v. 42) — skolan stängd 12.–16.10</span></div>
-        <div class="event"><span class="when">26.10.</span><span class="what">Skolsimning (v. 44–47)</span></div>
-        <div class="event"><span class="when">17.11.</span><span class="what">Öppet hus i skolan kl. 17–19</span></div>
-        <div class="event"><span class="when">1.12.</span><span class="what">Åk 4 på självständighetsfest hos borgmästaren i Finlandiahuset</span></div>
-        <div class="event"><span class="when">19.12.</span><span class="what">Skoldag kl. 9–12 (lördag)</span></div>
-        <div class="event"><span class="when">20.12.</span><span class="what">Jullov 20.12.–6.1.</span></div>
-        <div class="event"><span class="when">7.1.2027</span><span class="what">Vårterminen börjar</span></div>
+        <div class="event"><span class="when">23.9.</span><span class="what"><span class="badge-koe">koe</span>OL-koe: 8 kalaa</span></div>
+        <div class="event"><span class="when">25.9.</span><span class="what">Hem och Skola-aamiainen</span></div>
+        <div class="event"><span class="when">30.9.</span><span class="what"><span class="badge-koe">koe</span>OL, itsenäinen työ (koe, jossa saa käyttää oppikirjaa/vihkoa — ei tarvitse erikseen lukea etukäteen)</span></div>
+        <div class="event"><span class="when">1.10.</span><span class="what"><span class="badge-koe">koe</span>Englannin koe</span></div>
+        <div class="event"><span class="when">6.10.</span><span class="what"><span class="badge-koe">koe</span>Suomen koe (mofi)</span></div>
+        <div class="event"><span class="when">12.10.</span><span class="what">Syysloma (vko 42) — koulu kiinni 12.–16.10.</span></div>
+        <div class="event"><span class="when">26.10.</span><span class="what">Uimakoulu (vko 44–47)</span></div>
+        <div class="event"><span class="when">17.11.</span><span class="what">Koulun avoimet ovet klo 17–19</span></div>
+        <div class="event"><span class="when">1.12.</span><span class="what">4. luokat itsenäisyysjuhlassa pormestarilla Finlandia-talolla</span></div>
+        <div class="event"><span class="when">19.12.</span><span class="what">Koulupäivä klo 9–12 (lauantai)</span></div>
+        <div class="event"><span class="when">20.12.</span><span class="what">Joululoma 20.12.–6.1.</span></div>
+        <div class="event"><span class="when">7.1.2027</span><span class="what">Kevätlukukausi alkaa</span></div>
       </div>
     </div>
   </div>
 
   <footer>
-    Koostettu automaattisesti: myClub-kalenteri (ICS) + Wilman viikkotiedote.
+    Koostettu automaattisesti myClub-kalenterista (ICS) sekä viikon Wilma-tiedotteesta.<br>
+    Generoitu: 2026-09-11 · viikko 38 (14.9.–20.9.2026)
   </footer>
 
 </body>
