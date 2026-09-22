@@ -52,6 +52,7 @@
   .timetable-full td:first-child,.timetable-full th:first-child{text-align:left;color:var(--muted);font-family:'DM Mono',monospace;position:sticky;left:0;background:var(--surface);z-index:1;box-shadow:1px 0 0 var(--border);}
   .timetable-full tr.tt-break td{color:var(--muted);opacity:0.6;font-style:italic;}
   .timetable-full tr:last-child td{border-bottom:none;}
+  .timetable-full .tt-note{margin-top:0.5rem;font-size:0.62rem;color:var(--muted);}
   .grp li{font-size:0.9rem;padding:0.3rem 0;line-height:1.55;}
   .grp li::before{content:"–";color:var(--muted);margin-right:0.5rem;}
 
@@ -76,16 +77,16 @@
     <div class="child-name" style="color:var(--c2)"><span class="dot" style="background:var(--c2)"></span>Vincent</div>
     <div class="child-grid">
       <div class="card">
-        <div class="card-title">🏀 Harrastukset</div>
-        <div class="event"><span class="when">Ma 15–17</span><span class="what">Jalkapallo, yhteistreenit<br><span class="where">Ruukinlahden tekonurmi</span></span></div>
-        <div class="event"><span class="when">Ti 18:30–20</span><span class="what">Koripallo, treenit 1/2<br><span class="where">Crusellin peruskoulu</span></span></div>
-        <div class="event"><span class="when">Ke 15:30–17</span><span class="what">Jalkapallo, ulkokauden treenit (Sinivalko)<br><span class="where">Ruukinlahden tekonurmi</span></span></div>
-        <div class="event"><span class="when">To 18–19:30</span><span class="what">Koripallo, treenit (YO-kirjoitusten poikkeusaika)<br><span class="where">Jätkäsaaren liikuntahalli</span></span></div>
-        <div class="event"><span class="when">Pe 19–20</span><span class="what">Koripallo, Vantaan Energia-turnaus — sitova ilmoittautuminen<br><span class="where">Vantaa</span></span></div>
-        <div class="event"><span class="when">🗓️ Pe 16:30–19:30</span><span class="what">Teddys och Axels födis</span></div>
-        <div class="event"><span class="when">La 8:30–11</span><span class="what">Jalkapallo, piirisarja (Laru Sininen)<br><span class="where">Leppävaara 2 TN A</span></span></div>
-        <div class="event"><span class="when">Su 9:30–10:45</span><span class="what">Koripallo, ToPoLa Liila @ Alppila Basket<br><span class="where">Pasilan peruskoulu</span></span></div>
-        <div class="event"><span class="when">Su 13–14:15</span><span class="what">Koripallo, ToPoLa Keltainen @ Sykki/Syöttökone<br><span class="where">SYK</span></span></div>
+        <div class="card-title">🏀⚽ Harrastukset</div>
+        <div class="event"><span class="when">Ma 15:00–17:00</span><span class="what">Jalkapallo, yhteistreenit<br><span class="where">Ruukinlahden tekonurmi</span></span></div>
+        <div class="event"><span class="when">Ti 18:30–20:00</span><span class="what">Koripallo, P16 treenit 1/2<br><span class="where">Crusellin peruskoulu</span></span></div>
+        <div class="event"><span class="when">Ke 15:30–17:00</span><span class="what">Jalkapallo, ulkokauden treenit (SINIVALKO)<br><span class="where">Ruukinlahden tekonurmi</span></span></div>
+        <div class="event"><span class="when">To 18:00–19:30</span><span class="what">Koripallo, P16 treenit (poikkeusaika YO-kirjoitusten vuoksi)<br><span class="where">Jätkäsaaren liikuntahalli</span></span></div>
+        <div class="event"><span class="when">Pe 19:00–20:00</span><span class="what">Koripallo, Vantaan Energia -turnaus 22.–24.1.27, sitova ilmoittautuminen</span></div>
+        <div class="event"><span class="when">Pe 16:30–19:30</span><span class="what">🗓️ Teddys och Axels födis</span></div>
+        <div class="event"><span class="when">La 08:30–11:00</span><span class="what">Jalkapallo, Piirisarja (Laru Sininen)<br><span class="where">Leppävaara 2, Espoo</span></span></div>
+        <div class="event"><span class="when">Su 09:30–10:45</span><span class="what">Koripallo, MU11/2D ToPoLa Liila @ Alppila Basket<br><span class="where">Pasilan peruskoulu</span></span></div>
+        <div class="event"><span class="when">Su 13:00–14:15</span><span class="what">Koripallo, MU11/1D ToPoLa Keltainen @ Sykki/Syöttökone<br><span class="where">SYK</span></span></div>
       </div>
       <div class="card">
         <div class="card-title">🎒 Koulu</div>
@@ -102,17 +103,18 @@
         <div class="grp">
           <div class="grp-label">Muuta tällä viikolla</div>
           <ul>
-            <li>Tis: Gymnastik utomhus — ta med byteskläder och liten handduk</li>
-            <li>Ons: OL-artkännedomstest: 8 fiskar</li>
-            <li>Fre: Hem och Skola-frukost (obligatorisk) kl. 8.15 — skoldag undantagsvis 8.15–13.00. Sockskola. Får ta med en gäst och gärna ett brädspel.</li>
-            <li>Fre: Finska (mofi) skriftligt ordförhör</li>
+            <li>Gymnastik utomhus tisdag — ta med byteskläder och liten handduk</li>
+            <li>OL-artkännedomstest onsdag: 8 fiskar</li>
+            <li>Hem och Skola-frukost (obligatorisk) fredag kl. 8.15 — skoldag undantagsvis 8.15–13.00. Sockskola: lämna skor vid skohyllan eller använd skoskydd. Får ta med en gäst och gärna ett brädspel.</li>
+            <li>Finska (mofi) skriftligt ordförhör på fredag</li>
           </ul>
         </div>
         <div class="timetable-full">
           <div class="ttl">🕐 Lukujärjestys (kiinteä)</div>
+          <div class="tt-note" style="margin-top:0;margin-bottom:0.5rem;">Koulupäivän kesto vaihtelee: Ma 8.15–14.00, Ti 8.15–13.00, Ke 9.00–14.00, To 8.15–13.00, Pe 9.00–13.00.</div>
           <div class="tt-scroll">
             <table>
-              <tr><th>Aika</th><th>Mån</th><th>Tis</th><th>Ons</th><th>Tor</th><th>Fre</th></tr>
+              <tr><th>Tid</th><th>Mån</th><th>Tis</th><th>Ons</th><th>Tor</th><th>Fre</th></tr>
               <tr><td>8:15–9:00</td><td>FI (Johanna/Anna/Julia)</td><td>X</td><td>–</td><td>EN (Emma)</td><td>–</td></tr>
               <tr><td>9:00–9:45</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
               <tr class="tt-break"><td>9:45–10:00</td><td colspan="5">rast</td></tr>
@@ -135,15 +137,14 @@
     <div class="child-grid single">
       <div class="card">
         <div class="card-title">🗓️ Tulossa</div>
-        <div class="event"><span class="when">23.9.</span><span class="what"><span class="badge-koe">koe</span>OL-koe: 8 fiskar</span></div>
         <div class="event"><span class="when">25.9.</span><span class="what">HoS-dagen, gemensam frukost</span></div>
-        <div class="event"><span class="when">30.9.</span><span class="what"><span class="badge-koe">koe</span>OL självständigt arbete (prov med tillgång till lärobok/häfte)</span></div>
+        <div class="event"><span class="when">30.9.</span><span class="what"><span class="badge-koe">koe</span>OL självständigt arbete (prov med tillgång till lärobok/häfte — behöver ej övas hemma i förväg)</span></div>
         <div class="event"><span class="when">1.10.</span><span class="what"><span class="badge-koe">koe</span>Engelska-prov</span></div>
         <div class="event"><span class="when">6.10.</span><span class="what"><span class="badge-koe">koe</span>Finska-prov (mofi)</span></div>
         <div class="event"><span class="when">12.10.</span><span class="what">Höstlov (v. 42) — skolan stängd 12.–16.10</span></div>
         <div class="event"><span class="when">22.10.</span><span class="what"><span class="badge-koe">koe</span>Matematikprov: röda helheten</span></div>
         <div class="event"><span class="when">26.10.</span><span class="what">Skolsimning (v. 44–47)</span></div>
-        <div class="event"><span class="when">11.11.</span><span class="what"><span class="badge-koe">koe</span>Religion &amp; livsåskådning-prov</span></div>
+        <div class="event"><span class="when">11.11.</span><span class="what"><span class="badge-koe">koe</span>Religion & livsåskådning-prov</span></div>
         <div class="event"><span class="when">17.11.</span><span class="what">Öppet hus i skolan kl. 17–19</span></div>
         <div class="event"><span class="when">1.12.</span><span class="what">Åk 4 på självständighetsfest hos borgmästaren i Finlandiahuset</span></div>
         <div class="event"><span class="when">19.12.</span><span class="what">Skoldag kl. 9–12 (lördag)</span></div>
@@ -153,10 +154,6 @@
       </div>
     </div>
   </div>
-
-  <footer>
-    Koostettu myClub-kalenterista (ICS) sekä Wilman viikkotiedotteesta. Automaattinen päivitys (mode=refresh), 2026-09-21.
-  </footer>
 
 </body>
 </html>
